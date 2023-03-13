@@ -1,0 +1,14 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+
+/*
+//////////////////////////////BODY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+html {
+  scroll-behavior: smooth;
+}
+body {
+  line-height: 1.5;
+  margin: 0 auto;
+  font-family: $font-base;
+}

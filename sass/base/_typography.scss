@@ -1,0 +1,69 @@
+@use "../abstracts/variables" as *;
+/*
+//////////////////////TYPOGRAPHY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+p {
+  padding-bottom: 1rem;
+}
+p.justify {
+  text-align: justify;
+}
+p.caption {
+  font-size: $fs-14;
+  //padding-top: 1rem;
+}
+a {
+  color: $clr-black;
+}
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  transition: 300ms;
+}
+
+a:hover {
+  color: $clr-brand-red;
+}
+a:visited {
+  color: $clr-black;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  font-family: $font-header;
+}
+h2.brand {
+  font-size: $fs-60;
+  @include below(400px) {
+    font-size: $fs-30;
+  }
+  letter-spacing: 1px;
+  color: $clr-brand-red;
+  text-transform: uppercase;
+  border-bottom: 2px solid $clr-black;
+  margin-bottom: 1rem;
+}
+.intro {
+  font-size: $fs-18;
+  @include below(500px) {
+    font-size: $fs-16;
+  }
+}
+.credit-font {
+  font-family: $font-credits;
+  font-size: 11px;
+}

@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////HOME PAGE \\\\\\\\\\\\\\\*/
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    @include below(500px) {
+        grid-template-columns: 1fr;
+    }
+}

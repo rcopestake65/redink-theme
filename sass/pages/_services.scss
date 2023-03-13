@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////SERVICES PAGE \\\\\\\\\\\\\\\*/
+.icon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    padding-left: 1rem;
+}
+.icon-grid__item i {
+    font-size: $fs-85;
+    color: $clr-white;
+    @include below(500px) {
+        font-size: $fs-32;
+    }
+}
+.services-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    @include below(500px) {
+        grid-template-columns: 1fr;
+    }
+}
+.services-main-grid__item {
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    //background-color: cadetblue;
+    color: $clr-white;
+    align-items: center;
+    .services-main-grid__item__icon {
+        font-size: $fs-85;
+    }
+}

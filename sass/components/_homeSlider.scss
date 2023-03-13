@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////HOME SLIDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+.home-grid__right {
+    position: relative;
+    @include below(400px) {
+        display: none;
+    }
+}
+
+.home-grid__right .home-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.home-grid__right .home-slider.active {
+    opacity: 1;
+}
+.home-slider img {
+    width: 575px;
+    height: 500px;
+    object-fit: cover;
+    @include below(1000px) {
+        width: 300px;
+        height: 400px;
+    }
+}
+.credits {
+    background-color: $clr-black-transparent;
+    transform: translateY(-44px);
+    padding-left: 1rem;
+    color: $clr-white;
+    p {
+        padding: 10px 0;
+    }
+}

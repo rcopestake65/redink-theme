@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////HEADER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 10;
+    position: relative;
+    //margin-bottom: 3rem;
+}
+@include above(1000px) {
+    .header-container {
+        background-color: $clr-black-transparent-25;
+    }
+}
+.header-container a {
+    display: contents;
+}
+.header-container h1 span {
+    opacity: 0;
+}
+.header-container h1 {
+    background-image: url(/wp-content/uploads/logo.png);
+    background-repeat: no-repeat;
+    max-width: 220px;
+}
+.header-container img {
+    max-width: 220px;
+}
+.logo {
+    opacity: 0;
+}

@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as *;
+/*///////////////////fa-icons\\\\\\\\\\\\\\\\\\\\\*/
+.fa-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.fa-icon .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: $clr-black;
+    color: $clr-white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 105%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.fa-icon .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $clr-black transparent transparent transparent;
+}
+
+.fa-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}

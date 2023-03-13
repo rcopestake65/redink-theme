@@ -1,0 +1,131 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////NAVIGATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+.menu {
+  list-style-type: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@include above(900px) {
+  .menu .current_page_item > a {
+    color: $clr-white;
+    border-bottom: 2px solid $clr-white;
+    padding-bottom: 5px;
+    cursor: default;
+  }
+  .menu .current-menu-ancestor .current_page_item > a {
+    color: $clr-black;
+  }
+}
+.menu li {
+  padding-left: 2rem;
+}
+.menu li a {
+  position: relative;
+  display: block;
+  line-height: 1;
+  font-size: $fs-18;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: $clr-white;
+  text-decoration: none;
+}
+.menu li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: $clr-white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.menu li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+//stop hover underline effect on current page
+.menu li.current_page_item a:hover::after {
+  transform: scaleX(0);
+}
+.toggle-btn-container {
+  display: none;
+}
+
+// /* Mobile menu */
+.sub-menu-container {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.mobile-menu-container {
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s linear;
+  background-color: $clr-brand-red;
+}
+.mobile-sub-menu {
+  margin-left: 0;
+  font-size: $fs-16;
+}
+
+@include below(1050px) {
+  .current-menu-item li a {
+    color: $clr-white;
+  }
+
+  .mobile-menu {
+    // background-color: $clr-white;
+    padding: 2rem 0;
+    li {
+      padding: 0.25rem 0 0.25rem 1rem;
+    }
+    li a {
+      color: $clr-white;
+      width: 100%;
+      display: inline-block;
+      font-size: $fs-22;
+      &:hover {
+        color: $clr-brand-red;
+      }
+      &:active {
+        color: $clr-white;
+      }
+    }
+    li.current-menu-item a {
+      color: $clr-black;
+    }
+  }
+  .toggle-btn-container {
+    display: block;
+  }
+  .nav-toggle {
+    position: absolute;
+    top: 1.75rem;
+    right: 1rem;
+    transition: all 0.3s linear;
+    width: 50px;
+    background-color: $clr-black;
+  }
+  .menu {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+}
+@include below(700px) {
+  .nav-toggle {
+    top: 0;
+    right: 0;
+  }
+}

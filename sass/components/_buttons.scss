@@ -1,0 +1,140 @@
+@use "../abstracts/variables" as *;
+/*///////////////////Buttons\\\\\\\\\\\\\\\\\\\\\*/
+button {
+    border: none;
+    padding: 0.5rem 1.15rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    background-color: $clr-black;
+    border-radius: 5px;
+}
+.close-modal {
+    transition: none;
+    &:hover {
+        background-color: $clr-brand-red;
+    }
+}
+.button {
+    border: none;
+    padding: 0.5rem 1.15rem;
+    display: inline-block;
+    //opacity: 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    background-color: $clr-black;
+    border-radius: 5px;
+    i {
+        opacity: 0;
+        transition: all 0.3s linear;
+    }
+    &:hover {
+        color: $clr-white;
+        background-color: $clr-black;
+        scale: 1.05;
+        -webkit-box-shadow: 1px 1px 0px 1px #cc0000;
+        box-shadow: 1px 1px 0px 1px #cc0000;
+        i {
+            opacity: 1;
+            padding-left: 10px;
+        }
+    }
+    &:visited {
+        color: $clr-white;
+    }
+}
+
+//no idea why this one button needs to be set to opacity zero for the gsap to work - nothing else does
+// .hero__overlay__left a.heroBtn {
+//     opacity: 0;
+// }
+.branded {
+    background-color: $clr-brand-red;
+    display: inline-block;
+    &:hover {
+        color: $clr-white;
+        background-color: $clr-black;
+        scale: 1.1;
+        -webkit-box-shadow: 1px 1px 0px 1px #cc0000;
+        box-shadow: 1px 1px 0px 1px #cc0000;
+    }
+}
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 10;
+    justify-items: space-between;
+    align-content: center;
+    width: 100%;
+    top: 45%;
+    @include below(650px) {
+        top: 20%;
+    }
+}
+
+//testimonial carousel buttons
+.testimonial-btn-container {
+    background-color: $clr-dark-gray;
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+    //margin-top: 4rem;
+}
+
+.testimonial-prevBtn,
+.testimonial-nextBtn {
+    font-size: $fs-22;
+    background-color: $clr-dark-gray;
+}
+.testimonial-prevBtn:hover,
+.testimonial-nextBtn:hover {
+    color: $clr-brand-red;
+}
+//back to top button
+.top-link {
+    font-size: 1.25rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: $clr-brand-red;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: $clr-white;
+    opacity: 0.5;
+    animation: bounce 2s ease-in-out infinite;
+    visibility: hidden;
+    z-index: -100;
+    &:hover {
+        scale: 1.5;
+        color: $clr-white;
+        opacity: 1;
+    }
+    @include below($br-small) {
+        display: none;
+    }
+}
+.show-link {
+    visibility: visible;
+    z-index: 100;
+    @include below($br-small) {
+        display: none;
+    }
+}
+@keyframes bounce {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

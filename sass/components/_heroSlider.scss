@@ -1,0 +1,130 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////HERO SLIDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+/*hero slider*/
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    transform: translateY(-85px);
+    //z-index: -10;
+}
+
+.slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slider .slide.active {
+    opacity: 1;
+}
+.slide {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+}
+
+.slide__1 {
+    @include below(400px) {
+        background-position: 25% 0;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+        background-position: 25% 0;
+    }
+}
+.slide__2 {
+    @include below(400px) {
+        background-position: 25% 0;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+        background-position: 15% 0;
+    }
+}
+.slide__3 {
+    @include below(400px) {
+        background-position: 5% 0;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+        background-position: 5% 0;
+    }
+}
+.slide__4 {
+    background-position: top center;
+    @include below(400px) {
+        background-position: 35% 0;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+        background-position: 35% 0;
+    }
+}
+
+.slide__content h2 {
+    color: $clr-white;
+    font-size: $fs-85;
+    transform: translateX(-100px);
+    opacity: 0;
+    @include below(400px) {
+        font-size: $fs-48;
+    }
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.26);
+}
+//header graphic
+.slide__content {
+    position: relative;
+}
+.slide__icon {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    background-image: url(/wp-content/uploads/header-decoration.svg);
+    background-repeat: no-repeat;
+    background-position: 2px 0;
+    background-size: 100%;
+    @include below(400px) {
+        top: -30px;
+        left: -30px;
+        background-size: 60%;
+    }
+    padding: 200px 0 0 200px;
+}
+// .slide__icon {
+//     width: 50%;
+//     transform: translate(-100px, 100px);
+// }
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    @include below(1000px) {
+        transform: translateY(70%);
+    }
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    &:hover {
+        color: $clr-brand-red;
+    }
+}
+
+.prev-btn {
+    left: 50%;
+}
+
+.next-btn {
+    right: 50%;
+}

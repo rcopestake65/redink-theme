@@ -1,0 +1,46 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////HERO\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+.hero__image {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+    transform: translateY(-85px);
+    overflow: hidden;
+    @include below(500px) {
+        padding-top: 5rem;
+    }
+}
+.photo-credit-container {
+    align-self: end;
+    &:hover {
+        cursor: pointer;
+    }
+    span {
+        text-align: center;
+        //display: block;
+        background-color: $clr-white-transparent-50;
+        padding: 0.5rem;
+        display: table;
+        margin: 0 auto;
+        border-radius: 22px 22px 0px 0px;
+        -moz-border-radius: 22px 22px 0px 0px;
+        -webkit-border-radius: 22px 22px 0px 0px;
+    }
+}
+.photo-credit {
+    background-color: $clr-white-transparent-50;
+    border-radius: 22px 22px 0px 0px;
+    -moz-border-radius: 22px 22px 0px 0px;
+    -webkit-border-radius: 22px 22px 0px 0px;
+    padding: 0.5rem;
+    a:hover {
+        color: $clr-black;
+    }
+}
+
+//see sliders.scss for styles for the slider grid inside the hero

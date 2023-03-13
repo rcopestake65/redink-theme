@@ -1,0 +1,65 @@
+//utility colors
+$clr-white: hsl(0, 0%, 100%);
+$clr-gray: hsl(0, 0%, 54%);
+$clr-dark-gray: hsl(0, 0%, 12%);
+$clr-black: hsl(0, 0%, 0%);
+$clr-dark: hsl(0, 0%, 13%);
+$clr-white-transparent: hsla(360, 100%, 100%, 0.3);
+$clr-white-transparent-50: hsl(0, 0%, 100%, 0.5);
+$clr-black-transparent-50: hsla(0, 0%, 0%, 0.5);
+$clr-black-transparent-25: hsla(0, 0%, 0%, 0.25);
+$clr-black-transparent-80: hsla(0, 0%, 0%, 0.8);
+$clr-black-transparent-90: hsla(0, 0%, 0%, 0.9);
+$clr-warning: hsl(6, 78%, 57%);
+$clr-success: hsl(148, 71%, 47%);
+$clr-form: hsl(349, 35%, 91%);
+
+//branding color variants
+$clr-brand-red: hsl(0, 100%, 40%);
+
+//extra colors - some from elbow - amend!
+$clr-blue: hsl(228, 100%, 24%);
+$clr-blue-transparent-80: hsl(228, 100%, 24%, 0.8);
+$clr-blue-dark: hsl(217, 75%, 12%);
+$clr-blue-light: hsl(224, 24%, 33%);
+$clr-blue-light-transparent: hsl(224, 24%, 33%, 0.5);
+$clr-yellow: hsl(53, 100%, 50%);
+
+//fonts
+$font-base: "Nunito", sans-serif;
+$font-header: "Anton", sans-serif;
+$font-credits: "Courier Prime", monospace;
+$font-size-base: 1rem;
+
+//font-sizes
+$fs-14: 0.875rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-20: 1.25rem;
+$fs-22: 1.375rem;
+$fs-24: 1.5rem;
+$fs-30: 1.875rem;
+$fs-32: 2rem;
+$fs-36: 2.25rem;
+$fs-48: 3rem;
+$fs-60: 3.75rem;
+$fs-85: 5.313rem;
+
+//break points and widths
+
+@mixin below($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+@mixin above($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+$max-width: 1250px;
+$br-small: 400px;
+$br-medium: 800px;
+
+//transitions
+$transition: all 0.3s linear;

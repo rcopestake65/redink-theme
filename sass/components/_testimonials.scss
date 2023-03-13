@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as *;
+/*///////////////////Testimonials\\\\\\\\\\\\\\\\\\\\\*/
+/*testimonials slider*/
+.testimonial-full-width {
+    background-image: url(/wp-content/uploads/testimonials-bg.webp);
+    @include below(1000px) {
+        background-image: none;
+    }
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 108px;
+}
+.testimonial-slider {
+    // padding: 1rem;
+    background-color: $clr-dark-gray;
+    position: relative;
+    //margin-top: 4rem;
+    padding: 1rem 1rem 0 1rem;
+    h3 {
+        // color: $clr-white;
+        text-transform: uppercase;
+        // font-size: $fs-14;
+        padding-bottom: 0.5rem;
+    }
+}
+.testimonial-slider-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1100px;
+    grid-auto-flow: column;
+    overflow: hidden;
+    color: $clr-white;
+    gap: 4rem;
+}
+
+.testimonial-slide {
+    transition: 0.25s all ease-in-out;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 0.25fr 1fr;
+    min-width: 320px;
+    gap: 1rem;
+    img {
+        border-radius: 50%;
+    }
+}
+.testimonial-slide__1 {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100px;
+}
+.testimonial-slide__2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.testimonial-slide__3 {
+    grid-area: 2 / 1 / 3 / 3;
+}

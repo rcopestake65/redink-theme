@@ -1,0 +1,73 @@
+@use "../abstracts/variables" as *;
+/*///////////////////Isotope\\\\\\\\\\\\\\\\\\\\\*/
+.isotope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(243px, 1fr));
+    grid-auto-rows: 243px;
+    //grid-auto-flow: row dense;
+}
+//flex version
+.isotope-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.isotope-container__item {
+    position: relative;
+    //width: 243px;
+    @include below(400px) {
+        width: 100%;
+    }
+    img {
+        // width: 243px;
+        // height: 243px;
+        width: 100%;
+        height: 243px;
+        object-fit: cover;
+        @include below(400px) {
+            width: 100%;
+        }
+    }
+    .isotope-container__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+    }
+}
+.isotope-container__overlay {
+    color: $clr-white;
+    background-color: $clr-black-transparent-50;
+    opacity: 0;
+    @include below(1000px) {
+        opacity: 1;
+    }
+    transition: opacity 0.5s;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    &:hover {
+        opacity: 1;
+    }
+    h2 {
+        font-size: $fs-24;
+    }
+}
+//isotope button
+.button-group {
+    @include below(500px) {
+        display: none;
+    }
+    button {
+        background-color: $clr-white;
+        color: $clr-black;
+        text-transform: lowercase;
+        &:hover {
+            color: $clr-brand-red;
+        }
+    }
+    button:first-of-type {
+        padding-left: 0;
+    }
+}

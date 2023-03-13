@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////CONTAINERS (just global - other containers are page specific)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+.container {
+    max-width: 1250px;
+    padding: 0 1rem;
+    margin: 0 auto;
+    // min-height: 100vh;
+    position: relative;
+}
+@include below($br-small) {
+    .container {
+        width: 100%;
+        // padding: 0;
+    }
+}
+section {
+    margin-bottom: 4rem;
+}
+
+//Footer Container
+.footer-container {
+    background-color: $clr-black;
+    color: $clr-white;
+    padding: 2rem 0 1rem 0;
+    font-size: $fs-14;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 25px 25% 25% 1fr;
+    padding: 0 2rem;
+    gap: 1rem;
+    @include below(550px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    a {
+        color: $clr-white;
+        display: inline-block;
+    }
+}
