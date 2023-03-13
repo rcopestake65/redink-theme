@@ -2,19 +2,10 @@
 @use "../base" as *;
 /*////////////////PORTFOLIO PAGE \\\\\\\\\\\\\\\*/
 
-//body class surronds common elements
-.portfolio-template-default {
-    h2 {
-        color: $clr-brand-red;
-        text-transform: uppercase;
-        font-size: $fs-48;
-        border-bottom: 2px solid $clr-black;
-        text-align: center;
-        @include below(400px) {
-            font-size: $fs-32;
-            text-align: left;
-        }
-    }
+//hero section
+.portfolio-hero__overlay__right {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .portfolio-grid {

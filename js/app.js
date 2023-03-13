@@ -2,10 +2,10 @@
 
 //check for page variable
 const frontPage = document.querySelector(".home");
-const portfolioPage = document.querySelector(".post-type-archive-portfolio");
+const portfolioPage = document.querySelector(".page-work");
 const aboutPage = document.querySelector(".page-about-us");
 const servicesPage = document.querySelector(".page-services");
-const contact = document.querySelector(".page-contact");
+const contactPage = document.querySelector(".page-contact");
 
 //Date in footer
 const date = document.getElementById("date");
@@ -156,7 +156,7 @@ if (frontPage) {
 }
 
 //----------------------About page hero slider
-if (aboutPage) {
+if (aboutPage || portfolioPage) {
   const aboutSlides = document.querySelectorAll(".screenshots");
 
   let aboutIndex = 0;
@@ -202,9 +202,9 @@ if (aboutPage) {
 
   // Set an interval to show the next slide every 5 seconds
   setInterval(showNextaboutSlide, 5000);
-
-  //----------------------About page quotes slider
-
+}
+//----------------------About page quotes slider
+if (aboutPage) {
   const quotesSlides = document.querySelectorAll(".quote-slides");
 
   let quotesIndex = 0;

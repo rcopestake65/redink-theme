@@ -29,7 +29,7 @@ section {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 25px 25% 25% 1fr;
+    grid-template-columns: 100px 1fr 1fr 1fr;
     padding: 0 2rem;
     gap: 1rem;
     @include below(550px) {
@@ -38,5 +38,9 @@ section {
     a {
         color: $clr-white;
         display: inline-block;
+        transition: 300ms;
+        &:hover {
+            color: $clr-brand-red;
+        }
     }
 }

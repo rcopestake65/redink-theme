@@ -62,7 +62,7 @@ background-image: <?php if(get_field ('image_overlay')): ?> <?php the_field('ima
         <!--hero__overlay-->
     </div>
     <!--container-->
-    <!--photo credit-->
+    <!--start of photo credit-->
     <?php $credit = get_field('photo_credit'); ?>
     <?php
 if( $credit ): 

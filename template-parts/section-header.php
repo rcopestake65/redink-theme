@@ -24,6 +24,7 @@ array(
                 </button>
             </div>
         </nav>
+
     </div><!-- .header-container -->
 
 </header>

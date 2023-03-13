@@ -3,6 +3,7 @@
 /*testimonials slider*/
 .testimonial-full-width {
     background-image: url(/wp-content/uploads/testimonials-bg.webp);
+    overflow: hidden;
     @include below(1000px) {
         background-image: none;
     }
@@ -10,6 +11,7 @@
     background-size: cover;
     background-position: 0 108px;
 }
+
 .testimonial-slider {
     // padding: 1rem;
     background-color: $clr-dark-gray;

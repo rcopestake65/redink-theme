@@ -10,6 +10,8 @@
     display: grid;
     place-items: center;
     transform: translateY(-85px);
+    //compensate for negative translate
+    margin-bottom: -60px;
     overflow: hidden;
     @include below(500px) {
         padding-top: 5rem;

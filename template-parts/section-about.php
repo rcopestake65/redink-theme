@@ -1,4 +1,4 @@
-<?php get_template_part('template-parts/section','about-hero'); ?>
+<?php get_template_part('template-parts/section','about-services-hero'); ?>
 <div class="container">
     <?php get_template_part('template-parts/section','about-intro'); ?>
     <?php get_template_part('template-parts/section','about-services'); ?>

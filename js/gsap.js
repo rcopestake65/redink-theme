@@ -366,7 +366,7 @@ if (aboutPage) {
 }
 
 //--------------hero photo credit button
-if (aboutPage || servicesPage) {
+if (aboutPage || servicesPage || portfolioPage || contactPage) {
   const creditBtn = document.querySelector(".photo-credit-container");
   const arrow = document.querySelector(".photo-credit-container .fa-circle-up");
 
@@ -483,3 +483,55 @@ serviceBlock.forEach((item) => {
     }
   );
 });
+//testimonial container
+
+//testimonial slides
+const testimonialContainer = document.querySelector(".testimonial-container");
+const testimonialSlide1 = document.querySelectorAll(".testimonial-slide__1");
+const testimonialSlide2 = document.querySelectorAll(".testimonial-slide__2");
+const testimonialSlide3 = document.querySelectorAll(".testimonial-slide__3");
+
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: testimonialContainer,
+      start: "top 95%",
+      end: "bottom 25%",
+      //markers: true,
+    },
+  })
+  .fromTo(
+    testimonialContainer,
+    { opacity: 0, yPercent: 50 },
+    { opacity: 1, yPercent: 0, duration: 0.5 }
+  )
+  .fromTo(
+    testimonialSlide1,
+    { scale: 0, opacity: 0 },
+    {
+      scale: 1,
+      opacity: 1,
+      duration: 1,
+      //stagger: 0.2,
+      ease: "bounce.out",
+    }
+  )
+  .fromTo(
+    testimonialSlide2,
+    { x: 20, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      duration: 0.25,
+      //stagger: 0.25,
+    }
+  )
+  .fromTo(
+    testimonialSlide3,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 0.5,
+      //stagger: 0.25,
+    }
+  );

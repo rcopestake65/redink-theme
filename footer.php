@@ -7,7 +7,17 @@
 
         <div class="footer-content">
             <div>
-                <p class="linkdin"> <a href="#"><i class="fab fa-linkedin fa-2x"></i></a></p>
+                <a href="https://www.linkedin.com/company/red-ink-creative/about/" target="_blank" title=""
+                    class="multi-icons-link multi-iconsfab-linkedin-in">
+
+                    <i class="fa-brands fa-linkedin fa-2xl"></i>
+                </a>
+
+                <a href="https://twitter.com/redinkcreative" target="_blank" title=""
+                    class="multi-icons-link multi-iconsfab-twitter">
+
+                    <i class="fa-brands fa-square-twitter fa-2xl"></i>
+                </a>
             </div>
             <div>
                 <a href="/contact">Contact</a>
@@ -17,19 +27,12 @@
                     London<br />
                     E2 9PL
                 </p>
-
-
-
             </div>
             <div>
                 <ul>
                     <li><a href="/privacy-policy">Privacy Policy</a></li>
                     <li><a href="/cookie-use-policy">Cookie Policy</a></li>
                 </ul>
-            </div>
-            <div>
-
-
             </div>
             <div>
                 <p>&copy; Copyright <span id="date"></span> Red Ink Creative

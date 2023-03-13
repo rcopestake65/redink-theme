@@ -17,9 +17,10 @@
     justify-content: space-around;
     background-color: $clr-white;
     //border: 1px solid $clr-black-transparent-25;
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(128, 128, 128, 0.31);
-    -moz-box-shadow: 1px 1px 5px 0px rgba(128, 128, 128, 0.31);
-    box-shadow: 1px 1px 5px 0px rgba(128, 128, 128, 0.31);
+    //border-radius: 50px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 29px 29px 58px #ededed, -29px -29px 58px #ffffff;
     color: $clr-black;
     padding: 2rem;
     height: 300px;

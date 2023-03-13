@@ -5,7 +5,7 @@
 
             get_template_part( 'content', get_post_format() );
  ?>
-    <h2><?php the_title(); ?></h2>
+    <h2 class="brand"><?php the_title(); ?></h2>
     <div class="portfolio-grid">
         <div class="portfolio-grid__left">
             <img src="<?php the_field('image'); ?>" />
@@ -19,7 +19,7 @@
                 <p>Client:</p>
                 <p>
                     <?php if( $clientURL ): ?>
-                    <a class="button" href="<?php echo esc_url( $clientURL ); ?>">
+                    <a href="<?php echo esc_url( $clientURL ); ?>">
                         <?php endif; ?>
                         <?php the_field('client'); ?></a>
                 </p>
@@ -28,7 +28,7 @@
                 <?php if( $agencyURL ): ?>
                 <p>Agency:</p>
                 <p>
-                    <a class="button" href="<?php echo esc_url( $agencyURL ); ?>">
+                    <a href="<?php echo esc_url( $agencyURL ); ?>">
 
                         <?php the_field('agency'); ?></a>
                 </p>
@@ -101,5 +101,6 @@ endwhile;
 ?>
     </div>
     <!--.portfolio-images-grid-->
+    <?php get_template_part('template-parts/section','isotope-single'); ?>
 </div>
 <!--.container-->

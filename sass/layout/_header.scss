@@ -11,6 +11,16 @@
     position: relative;
     //margin-bottom: 3rem;
 }
+.single-portfolio {
+    .header-container {
+        background-color: $clr-black;
+        h1 {
+            background-image: url(/wp-content/uploads/logo-inverted.png);
+            background-repeat: no-repeat;
+            max-width: 220px;
+        }
+    }
+}
 @include above(1000px) {
     .header-container {
         background-color: $clr-black-transparent-25;

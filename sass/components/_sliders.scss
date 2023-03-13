@@ -10,6 +10,8 @@
     // height: 100vh;
     max-width: 100%;
     transform: translateY(-85px);
+    //compensate for negative translate
+    margin-bottom: -60px;
 
     .slide {
         // position: absolute;
@@ -157,18 +159,14 @@
 .hero__overlay {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    //width: 75%;
     padding: 2rem;
-    //background-color: $clr-blue-transparent-80;
-    //border-radius: 15px;
-    //overflow: hidden;
-    //min-height: 55%;
+    margin-top: 10rem;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     @include below(900px) {
+        margin-top: 5rem;
         width: 95%;
     }
-    // @include below(800px) {
-    //     margin-top: 5rem;
-    // }
     @include below(700px) {
         grid-template-columns: 1fr;
     }

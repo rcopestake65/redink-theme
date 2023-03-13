@@ -264,7 +264,7 @@ section {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 25px 25% 25% 1fr;
+  grid-template-columns: 100px 1fr 1fr 1fr;
   padding: 0 2rem;
   gap: 1rem;
 }
@@ -276,6 +276,10 @@ section {
 .footer-content a {
   color: white;
   display: inline-block;
+  transition: 300ms;
+}
+.footer-content a:hover {
+  color: #cc0000;
 }
 
 /*
@@ -288,6 +292,15 @@ section {
   padding: 1rem;
   z-index: 10;
   position: relative;
+}
+
+.single-portfolio .header-container {
+  background-color: black;
+}
+.single-portfolio .header-container h1 {
+  background-image: url(/wp-content/uploads/logo-inverted.png);
+  background-repeat: no-repeat;
+  max-width: 220px;
 }
 
 @media (min-width: 1000px) {
@@ -482,18 +495,9 @@ section {
 }
 
 /*////////////////PORTFOLIO PAGE \\\\\\\\\\\\\\\*/
-.portfolio-template-default h2 {
-  color: #cc0000;
-  text-transform: uppercase;
-  font-size: 3rem;
-  border-bottom: 2px solid black;
-  text-align: center;
-}
-@media (max-width: 400px) {
-  .portfolio-template-default h2 {
-    font-size: 2rem;
-    text-align: left;
-  }
+.portfolio-hero__overlay__right {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .portfolio-grid {
@@ -533,6 +537,10 @@ section {
 .contact-full-width-container {
   min-height: 60vh;
   background-position: left top;
+}
+
+.page-contact .hero__overlay__right {
+  display: block;
 }
 
 /*////////////////404\\\\\\\\\\\\\\\*/
@@ -743,6 +751,7 @@ button {
   display: grid;
   max-width: 100%;
   transform: translateY(-85px);
+  margin-bottom: -60px;
 }
 .home-hero-slider .slide {
   grid-row: 1/-1;
@@ -902,9 +911,13 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 2rem;
+  margin-top: 10rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 @media (max-width: 900px) {
   .hero__overlay {
+    margin-top: 5rem;
     width: 95%;
   }
 }
@@ -980,6 +993,7 @@ button {
 /*testimonials slider*/
 .testimonial-full-width {
   background-image: url(/wp-content/uploads/testimonials-bg.webp);
+  overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 108px;
@@ -1123,6 +1137,7 @@ button {
   display: grid;
   place-items: center;
   transform: translateY(-85px);
+  margin-bottom: -60px;
   overflow: hidden;
 }
 @media (max-width: 500px) {
@@ -1167,7 +1182,7 @@ button {
 }
 
 .quote-slides__overlay {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 4rem 1rem;
   margin: 0 auto;
 }
@@ -1213,9 +1228,9 @@ button {
   flex-direction: column;
   justify-content: space-around;
   background-color: white;
-  -webkit-box-shadow: 1px 1px 5px 0px rgba(128, 128, 128, 0.31);
-  -moz-box-shadow: 1px 1px 5px 0px rgba(128, 128, 128, 0.31);
-  box-shadow: 1px 1px 5px 0px rgba(128, 128, 128, 0.31);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 29px 29px 58px #ededed, -29px -29px 58px #ffffff;
   color: black;
   padding: 2rem;
   height: 300px;
