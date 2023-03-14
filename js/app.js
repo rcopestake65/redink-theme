@@ -419,3 +419,5 @@ closeBtn.forEach((item) => {
 //     modals.style.display = "none";
 //   }
 // };
+
+//service grid items hover effect ison colour change

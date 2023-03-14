@@ -18,7 +18,7 @@ $bg = get_sub_field('background_colour');
 
 ?>
 
-        <div style="background: <?php echo($bg) ;?>" class="services-main-grid__item img-shape">
+        <div class="services-main-grid__item">
             <div class="services-main-grid__item__icon">
                 <?php the_sub_field('icon'); ?>
             </div>

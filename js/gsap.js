@@ -144,6 +144,21 @@ gsap.fromTo(
     },
   }
 );
+gsap.fromTo(
+  ".price",
+  { x: -60, opacity: 0 },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+
+    scrollTrigger: {
+      trigger: ".price",
+      start: "top 75%",
+      end: "bottom 25%",
+    },
+  }
+);
 //--------------------------isotope portfolio items
 gsap.fromTo(
   ".isotope-container__item",
@@ -483,6 +498,94 @@ serviceBlock.forEach((item) => {
     }
   );
 });
+//services prices
+const priceGridItem = gsap.utils.toArray(".services-price-grid__item");
+const headerItem = document.querySelectorAll(
+  ".services-price-grid__item__header"
+);
+const straplineItem = document.querySelectorAll(
+  ".services-price-grid__item__strapline"
+);
+const priceItem = document.querySelectorAll(
+  ".services-price-grid__item__price"
+);
+const contentItem = document.querySelectorAll(
+  ".services-price-grid__item__content"
+);
+
+priceGridItem.forEach((item) => {
+  gsap.fromTo(
+    priceGridItem,
+    { x: -50, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      ease: "back",
+      scrollTrigger: {
+        trigger: priceGridItem,
+        start: "top 75%",
+        end: "bottom 25%",
+      },
+    }
+  );
+  gsap.fromTo(
+    headerItem,
+    {
+      x: -50,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      delay: 0.2,
+      ease: "back",
+    }
+  );
+  gsap.fromTo(
+    straplineItem,
+    {
+      x: -50,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      delay: 0.4,
+      ease: "back",
+    }
+  );
+  gsap.fromTo(
+    priceItem,
+    {
+      x: -50,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      delay: 0.6,
+      ease: "back",
+    }
+  );
+  gsap.fromTo(
+    contentItem,
+    {
+      x: -50,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      delay: 0.7,
+      ease: "back",
+    }
+  );
+});
 //testimonial container
 
 //testimonial slides
@@ -535,3 +638,32 @@ gsap
       //stagger: 0.25,
     }
   );
+//--------------contact page
+//address grid items
+if (contactPage) {
+  const contactGrid = document.querySelector(".contact-grid");
+  const contactItem = document.querySelectorAll(".contact-grid__item");
+  const map = document.querySelector(".googlemap");
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: contactGrid,
+        start: "top 75%",
+        end: "bottom 25%",
+        //markers: true,
+      },
+    })
+    .fromTo(
+      contactItem,
+      { opacity: 0, y: 200 },
+      { opacity: 1, y: 0, duration: 0.75, stagger: 0.25 }
+    )
+    .fromTo(map, { y: 200 }, { y: 0, duration: 0.75 });
+}
+//portfolio single page
+const screenshot = document.querySelector(".portfolio-grid__left img");
+gsap.fromTo(
+  screenshot,
+  { opacity: 0, scale: 0.5 },
+  { opacity: 1, scale: 1, duration: 0.5 }
+);

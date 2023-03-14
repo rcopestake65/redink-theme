@@ -24,6 +24,10 @@
     color: $clr-black;
     padding: 2rem;
     height: 300px;
+    //transition: 300ms;
+    &:hover {
+        box-shadow: 9px 9px 8px #0c96c02b, -9px -9px 8px #fff;
+    }
     p,
     a,
     h2,

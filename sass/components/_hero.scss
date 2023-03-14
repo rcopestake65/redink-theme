@@ -4,6 +4,9 @@
 */
 .hero__image {
     height: 100vh;
+    @include below(500px) {
+        height: auto;
+    }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
