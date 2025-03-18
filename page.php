@@ -1,7 +1,9 @@
 <?php get_header();?>
+<div class="container">
+    <h2><?php the_title();?></h2>
 
-<h1><?php the_title();?></h1>
+    <?php get_template_part('template-parts/section', 'content');?>
+</div>
 
-<?php get_template_part('template-parts/section', 'content');?>
 
 <?php get_footer();?>

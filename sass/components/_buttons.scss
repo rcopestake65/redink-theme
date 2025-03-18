@@ -16,7 +16,9 @@ button {
         background-color: $clr-brand-red;
     }
 }
-.button {
+.button,
+#wpforms-submit-644,
+#wpforms-submit-1118 {
     border: none;
     padding: 0.5rem 1.15rem;
     display: inline-block;
@@ -27,6 +29,17 @@ button {
     transition: all 0.3s linear;
     background-color: $clr-black;
     border-radius: 5px;
+    &.testimonial {
+        background-color: $clr-blue-light;
+        padding: 0.25rem 0.5rem;
+        &:hover {
+            color: $clr-white;
+            background-color: $clr-blue-light;
+            scale: 1.05;
+            -webkit-box-shadow: 1px 1px 0px 1px $clr-white;
+            box-shadow: 1px 1px 0px 1px $clr-white;
+        }
+    }
     i {
         opacity: 0;
         transition: all 0.3s linear;
@@ -35,8 +48,8 @@ button {
         color: $clr-white;
         background-color: $clr-black;
         scale: 1.05;
-        -webkit-box-shadow: 1px 1px 0px 1px #cc0000;
-        box-shadow: 1px 1px 0px 1px #cc0000;
+        -webkit-box-shadow: 1px 1px 0px 1px $clr-brand-red;
+        box-shadow: 1px 1px 0px 1px $clr-brand-red;
         i {
             opacity: 1;
             padding-left: 10px;
@@ -136,5 +149,17 @@ button {
     }
     100% {
         opacity: 1;
+    }
+}
+@keyframes pulsing {
+    0% {
+        scale: 1;
+    }
+    50% {
+        transform: scale(1.25);
+        opacity: 0.5;
+    }
+    100% {
+        scale: 1;
     }
 }

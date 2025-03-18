@@ -11,7 +11,7 @@ if( $link ):
     $link_target = $link['target'] ? $link['target'] : '_self';
     ?>
             <div class="gsap-btn-container">
-                <a class="button" href="<?php echo esc_url( $link_url ); ?>"
+                <a class="button mb1" href="<?php echo esc_url( $link_url ); ?>"
                     target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
                         class="fa-regular fa-circle-right fa-xs"></i></a>
                 <?php endif; ?>
@@ -19,9 +19,67 @@ if( $link ):
 
         </div>
         <div class="about-grid__right">
-            <img class="img-shape" loading="lazy" src="<?php the_field('biog_image'); ?>" alt="" />
-            <p class="caption">Richard Copestake and Steve Mersereau</p>
+            <div class="biog-imgs img-shape">
+                <!--biog image and overlay RC-->
+                <?php
+            $biogImageOne = get_field('biog_image_one');
+            if($biogImageOne):
+                $url = &$biogImageOne ['url'];
+                $alt = $biogImageOne['alt'];
+                $caption = $biogImageOne['caption'];
+
+?>
+                <div class="biog-imgs__item">
+                    <div class="biog-imgs__overlay">
+                        <img class="biog-img-one img-shape" loading="lazy" src="<?php echo esc_url($url); ?>"
+                            alt="<?php echo $alt ?>" />
+                        <div class="biog-imgs__overlay__item img-shape">
+                            <p><?php the_field('biog_one')?></p>
+                            <p><a target="_blank" title="LinkdIn profile"
+                                    href="https://www.linkedin.com/in/richard-copestake-10912926b/"><i
+                                        class="fa-brands fa-linkedin"></i></a></p>
+                        </div>
+                    </div>
+                    <i class="biog-arrow-one fa-solid fa-circle-info"></i>
+
+                    <p class="caption-one"><?php echo esc_html($caption); ?></p>
+                </div>
+
+
+                <?php endif; ?>
+
+                <!--biog image and overlay SM-->
+                <?php
+            $biogImageTwo = get_field('biog_image_two');
+            if($biogImageTwo):
+                $url = &$biogImageTwo ['url'];
+                $alt = $biogImageTwo['alt'];
+                $caption = $biogImageTwo['caption'];
+
+?>
+                <div class="biog-imgs__item">
+                    <div class="biog-imgs__overlay">
+                        <img class="biog-img-two img-shape" loading="lazy" src="<?php echo esc_url($url); ?>"
+                            alt="<?php echo $alt ?>" />
+                        <div class="biog-imgs__overlay__item img-shape">
+                            <p><?php the_field('biog_two')?></p>
+                            <p><a target="_blank" title="LinkdIn profile" href="https://www.linkedin.com/in/redink/"><i
+                                        class="fa-brands fa-linkedin"></i></a></p>
+                        </div>
+
+                    </div>
+
+                    <i class="biog-arrow-two fa-solid fa-circle-info"></i>
+                    <p class="caption-two"><?php echo esc_html($caption); ?></p>
+                </div>
+
+
+                <?php endif; ?>
+            </div>
+
             <div class="quote-slides-container">
+
+
                 <?php
 
 // Check rows existexists.

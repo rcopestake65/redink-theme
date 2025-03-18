@@ -3,13 +3,18 @@
     <div class="button-group">
         <button data-filter="all" class="all" type="button">All</button>
         <?php 
-        $categories = get_categories();
-        foreach($categories as $category){
-    
-    echo '<button data-filter="'.$category->slug.'" class="'.$category->slug.'" type="button">'.$category->name. '</button>';
+ $parent_cat_id = 8;           
+ $subcategories = get_terms( array(
+    'taxonomy' => 'category',
+    'parent' => $parent_cat_id,
+    'hide_empty' => false,
+) );
+if ( ! empty( $subcategories ) && ! is_wp_error( $subcategories ) ) {
+    foreach ( $subcategories as $subcategory ) {
+        echo '<button data-filter="'.$subcategory->slug.'" class="'.$subcategory->slug.'" type="button">'.$subcategory->name. '</button>';
+    }
 }
     ?>
-
     </div>
 
     <div class="isotope-grid">
@@ -18,20 +23,20 @@ $args = array(
     'post_type' => 'portfolio',
     'orderby' => 'rand',
     'order' => 'rand',
-    'posts_per_page' => '35'
+    'posts_per_page' => '100'
     );
     $portfolio = new WP_Query($args);
     if($portfolio->have_posts()) : while($portfolio->have_posts()) : $portfolio->the_post(); 
                 // Loop output goes here ?>
 
 
-        <div class="isotope-container__item <?php
+        <div class="isotope-container__item img-zoom <?php
 $categories = get_the_category(get_the_id());
 foreach ($categories as $category){
     echo $category->slug.' ';
 }
 ?>">
-            <img loading="lazy" class="" src="<?php the_field('image'); ?>" />
+            <img loading="lazy" alt="<?php the_field('client'); ?>" src="<?php the_field('image'); ?>" />
 
             <a href="<?php the_permalink(); ?>">
                 <div class="isotope-container__overlay">

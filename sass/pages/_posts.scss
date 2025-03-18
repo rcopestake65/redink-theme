@@ -1,0 +1,96 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////POSTS\\\\\\\\\\\\\\\*/
+.posts-main {
+    transform: translateY(-200px);
+    background-color: $clr-white;
+    padding: 2rem;
+    @include below(500px) {
+        //compensation for the translate above in a single col
+        margin-bottom: -200px;
+        padding: 2rem 1rem;
+    }
+    .posts-written-content {
+        padding-top: 1rem;
+        a {
+            //text-decoration: underline;
+            background-color: $clr-yellow-light;
+            padding: 0 5px;
+            border-radius: 3px;
+            &:hover {
+                background-color: $clr-blue-light;
+                color: $clr-white;
+            }
+        }
+    }
+}
+.posts-written-content__introduction {
+    padding: 2.5rem;
+    //background-image: var(--gradient-19);
+    border: 5px solid $clr-yellow-light;
+    border-right: none;
+    border-bottom: none;
+    margin-bottom: 1rem;
+    p {
+        font-size: $fs-18;
+        margin-top: 2rem;
+    }
+}
+.posts-written-content.two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.posts-sidebar {
+    padding: 0.5rem;
+    @include below(500px) {
+        padding: 2rem 1rem;
+    }
+}
+.posts-hero-photo-credit {
+    transform: translateY(-15px);
+}
+.recent-posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    box-shadow: $shadow-1;
+    transition: $transition;
+    overflow: hidden;
+    &:hover {
+        box-shadow: $shadow-1-hover;
+    }
+}
+.recent-posts-grid-item {
+    overflow: hidden;
+    h3 {
+        padding-top: 0.5rem;
+    }
+}
+//adapt the .recent-posts-grid for the homepage
+.home {
+    .recent-posts-grid {
+        grid-template-columns: 1fr 1fr;
+        @include below(500px) {
+            grid-template-columns: 1fr;
+        }
+        box-shadow: none;
+        gap: 2rem;
+        img {
+            max-height: 300px;
+        }
+    }
+    .recent-posts-grid-item {
+        box-shadow: $shadow-1;
+        transition: $transition;
+        padding: 2rem;
+        &:hover {
+            box-shadow: $shadow-1-hover;
+        }
+        .recent-posts-grid-title {
+            margin-top: 1rem;
+        }
+    }
+}

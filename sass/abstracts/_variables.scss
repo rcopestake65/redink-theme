@@ -4,8 +4,9 @@ $clr-gray: hsl(0, 0%, 54%);
 $clr-dark-gray: hsl(0, 0%, 12%);
 $clr-black: hsl(0, 0%, 0%);
 $clr-dark: hsl(0, 0%, 13%);
-$clr-white-transparent: hsla(360, 100%, 100%, 0.3);
+$clr-white-transparent-25: hsla(360, 100%, 100%, 0.25);
 $clr-white-transparent-50: hsl(0, 0%, 100%, 0.5);
+$clr-white-transparent-70: hsl(0, 0%, 100%, 0.75);
 $clr-black-transparent-50: hsla(0, 0%, 0%, 0.5);
 $clr-black-transparent-25: hsla(0, 0%, 0%, 0.25);
 $clr-black-transparent-80: hsla(0, 0%, 0%, 0.8);
@@ -17,13 +18,14 @@ $clr-form: hsl(349, 35%, 91%);
 //branding color variants
 $clr-brand-red: hsl(0, 100%, 40%);
 
-//extra colors - some from elbow - amend!
+//extra colors -
 $clr-blue: hsl(228, 100%, 24%);
 $clr-blue-transparent-80: hsl(228, 100%, 24%, 0.8);
 $clr-blue-dark: hsl(217, 75%, 12%);
 $clr-blue-light: hsl(224, 24%, 33%);
 $clr-blue-light-transparent: hsl(224, 24%, 33%, 0.5);
 $clr-yellow: hsl(53, 100%, 50%);
+$clr-yellow-light: hsla(45, 100%, 68%, 0.9);
 
 //fonts
 $font-base: "Nunito", sans-serif;
@@ -61,5 +63,15 @@ $max-width: 1250px;
 $br-small: 400px;
 $br-medium: 800px;
 
+$screen-xs-max: 576px;
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
 //transitions
 $transition: all 0.3s linear;
+
+//shadows
+$shadow-1: 2px 2px 5px 0px rgba(230, 230, 230, 1);
+$shadow-1-hover: 9px 9px 8px #0c96c02b, -9px -9px 8px #fff;

@@ -17,6 +17,9 @@
 @use "pages/contact";
 @use "pages/error";
 @use "pages/services";
+@use "pages/posts";
+@use "pages/articles";
+@use "pages/charities";
 
 @use "components/buttons";
 @use "components/sliders";
@@ -26,3 +29,4 @@
 @use "components/quote";
 @use "components/modals";
 @use "components/tooltips";
+@use "components/forms";

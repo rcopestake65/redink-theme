@@ -20,10 +20,15 @@
     //border-radius: 50px;
     border-radius: 18px;
     background: #ffffff;
-    box-shadow: 29px 29px 58px #ededed, -29px -29px 58px #ffffff;
+    box-shadow: $shadow-1;
+    &:hover {
+        box-shadow: $shadow-1-hover;
+    }
     color: $clr-black;
     padding: 2rem;
     height: 300px;
+    transition: $transition;
+
     p,
     a,
     h2,
@@ -76,13 +81,31 @@
     width: 90%;
     // height: 30vh;
     //text-align: center;
-    display: grid;
-    place-items: center;
+    //display: grid;
+    //place-items: center;
     position: relative;
     padding: 1rem;
+    p {
+        text-align: left;
+    }
+    h2 {
+        text-align: center;
+    }
     .icon {
         font-size: $fs-85;
+        text-align: center;
     }
+}
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    background: $clr-black;
+    border-color: transparent;
+    color: $clr-white;
+    cursor: pointer;
+    transition: 300ms;
 }
 .close-btn {
     position: absolute;
@@ -97,4 +120,12 @@
 .close-btn:hover {
     color: red;
     transform: scale(1.3);
+}
+
+//modal container for audit form on Charities page
+.page-charities {
+    .modal-container {
+        background-color: $clr-blue-light;
+        color: $clr-white;
+    }
 }

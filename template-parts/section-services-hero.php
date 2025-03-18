@@ -1,8 +1,5 @@
-<?php if( get_field('hero') ): ?>
-
-<div class="hero__image"
-    style="
-background-image: <?php if(get_field ('image_overlay')): ?> <?php the_field('image_overlay')?>,<?php endif; ?> url(<?php the_field('hero'); ?>">
+<div class="hero__image zoom" style="
+background-image: <?php if(get_field ('image_overlay')): ?> <?php the_field('image_overlay')?>,<?php endif; ?> ">
 
     <div class="container">
 
@@ -22,7 +19,7 @@ background-image: <?php if(get_field ('image_overlay')): ?> <?php the_field('ima
                     <a class="button heroBtn" href="<?php echo esc_url( $link_url ); ?>"
                         target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
                             class="fa-regular fa-circle-right fa-xs"></i></a>
-                    <?php endif; ?>
+
                 </div>
 
             </div>

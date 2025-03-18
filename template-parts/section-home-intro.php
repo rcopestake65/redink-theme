@@ -1,7 +1,7 @@
 <?php if(have_posts()): while(have_posts()): the_post();?>
 <?php get_template_part('template-parts/section','slider'); ?>
 <section>
-    <h2 class="brand who"><?php the_field('heading') ?></h2>
+    <h2 id="who" class="brand who"><?php the_field('heading') ?></h2>
     <div class="home-grid">
         <div class="home-grid__left">
             <div class="intro"> <?php the_field('main_copy');?></div>
@@ -19,7 +19,7 @@ if( have_rows('decorative_images') ):
         $credit = get_sub_field('credit');
         ?>
             <div class="home-slider">
-                <img class="img-shape" loading="lazy" src="<?php echo $image ?>" alt="" />
+                <img class="img-shape" loading="lazy" src="<?php echo $image ?>" alt="Graffiti in London" />
 
                 <?php
 if( $credit ): 
@@ -32,6 +32,8 @@ if( $credit ):
                 <?php endif; ?>
 
             </div>
+
+
             <?php
 
 // End loop.
@@ -41,6 +43,7 @@ else :
 // Do something...
 endif;
 ?>
+
         </div>
 
     </div>

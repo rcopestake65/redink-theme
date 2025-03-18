@@ -2,3 +2,37 @@
 /*
 ///////////////////////////FOOTER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
+.trust-pilot img {
+    width: 30%;
+}
+.copyright {
+    text-align: right;
+    @include below(500px) {
+        text-align: left;
+    }
+}
+
+.footer-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    z-index: 10;
+    position: relative;
+    border-bottom: 1px solid $clr-white-transparent-25;
+    h4 {
+        background-image: url(/wp-content/uploads/logo-inverted.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        span {
+            opacity: 0;
+        }
+    }
+    img {
+        min-width: 200px;
+    }
+    .menu li a {
+        font-size: $fs-14;
+    }
+}

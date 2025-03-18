@@ -18,7 +18,7 @@ array(
 );
 ?>
             <div class="toggle-btn-container">
-                <button class="nav-toggle">
+                <button aria-label="Toggle open and close the mobile menu " class="nav-toggle">
                     <i class="fas fa-bars"></i>
                     <i class="fas fa-times hide"></i>
                 </button>
@@ -41,6 +41,6 @@ array(
 ?>
 </div>
 <!--back to top btn-->
-<a href="#" class="scroll-link top-link">
+<a aria-label="scroll to the top of the page" href="#" class="scroll-link top-link">
     <i class="fas fa-arrow-up"></i>
 </a>

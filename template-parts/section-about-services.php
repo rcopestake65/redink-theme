@@ -27,11 +27,12 @@ if( have_rows('modals') ):
         </div>
         <div class="modal-overlay <?php echo $class; ?>">
             <div class="modal-container">
+                <button class="close-modal"><i class="fa-solid fa-x"></i></button>
                 <h2><?php echo $service ?></h2>
                 <p><?php echo $text ?>
                 </p>
                 <p class="icon"><?php echo $icon ?></p>
-                <button class="close-modal"><i class="fa-solid fa-x"></i></button>
+
             </div>
         </div>
 

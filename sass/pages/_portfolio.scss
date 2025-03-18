@@ -11,7 +11,11 @@
 .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 4rem;
+    @include below(500px) {
+        grid-template-columns: 1fr;
+    }
+    margin: 4rem 0;
+    gap: 2rem;
     ul {
         list-style-type: disc;
         padding-left: 1rem;
@@ -19,13 +23,19 @@
 }
 .portfolio_grid__copy,
 .extra-content {
-    padding: 2rem;
+    padding: 0 1rem 1rem 1rem;
+}
+.portfolio-grid__right {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
 }
 .portfolio-grid__right__inner {
     display: grid;
     grid-template-columns: 30% 1fr;
     row-gap: 2rem;
-    padding: 2rem;
+    padding-left: 1rem;
 }
 .portfolio-images-grid {
     display: grid;

@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////POSTS\\\\\\\\\\\\\\\*/
+
+.page-articles .recent-posts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @include below(500px) {
+        grid-template-columns: 1fr;
+    }
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    box-shadow: none;
+}
+.recent-posts-grid-item {
+    overflow: hidden;
+    box-shadow: $shadow-1;
+    transition: $transition;
+    overflow: hidden;
+    padding: 1rem;
+    &:hover {
+        box-shadow: $shadow-1-hover;
+    }
+}

@@ -11,3 +11,56 @@
         display: block;
     }
 }
+
+//address grid
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    place-content: center;
+    margin-top: 2rem;
+    @include below(500px) {
+        grid-template-columns: 1fr;
+    }
+}
+.contact-grid__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: $clr-white;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: $shadow-1;
+    transition: $transition;
+    &:hover {
+        box-shadow: $shadow-1-hover;
+    }
+    color: $clr-black;
+    padding: 2rem;
+    height: 300px;
+    h3 {
+        font-size: $fs-32;
+        text-transform: uppercase;
+    }
+    .fa-solid {
+        font-size: $fs-32;
+    }
+}
+.googlemap {
+    position: relative;
+    padding-bottom: 25%; /* 4:3 ratio*/
+    @include below(500px) {
+        padding-bottom: 50%;
+    }
+    height: 0;
+    overflow: hidden;
+}
+
+.googlemap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}

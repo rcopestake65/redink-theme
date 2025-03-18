@@ -1,11 +1,27 @@
+@use "../abstracts/variables" as *;
 /*
 //////////////////////UTILITY CLASSES\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 .hide {
     display: none !important;
 }
+.hidden {
+    visibility: hidden;
+}
 .show {
-    display: block;
+    display: block !important;
+}
+.alignleft {
+    float: left;
+    padding-right: 1rem;
+}
+.alignright {
+    float: right;
+    padding-left: 1rem;
+}
+.clearboth {
+    clear: both;
+    padding-top: 1rem;
 }
 /*padding & margin*/
 
@@ -20,6 +36,12 @@
 }
 .pt1 {
     padding-top: 1rem;
+}
+.mb1 {
+    margin-bottom: 1rem;
+}
+.mt1 {
+    margin-top: 1rem;
 }
 .mt2 {
     margin-top: 2rem !important;
@@ -36,4 +58,35 @@
 .img-shadow {
     -webkit-box-shadow: 7px 7px 0px 2px #cc0000;
     box-shadow: 7px 7px 0px 2px #cc0000;
+}
+
+//-screen size guide
+// Extra small devices (phones, 576px and down)
+@media only screen and (max-width: $screen-xs-max) {
+    /* Your CSS rules for extra small devices here */
+}
+
+// Small devices (landscape phones, 576px and up)
+@media only screen and (min-width: $screen-sm-min) {
+    /* Your CSS rules for small devices here */
+}
+
+// Medium devices (tablets, 768px and up)
+@media only screen and (min-width: $screen-md-min) {
+    /* Your CSS rules for medium devices here */
+}
+
+// Large devices (desktops, 992px and up)
+@media only screen and (min-width: $screen-lg-min) {
+    /* Your CSS rules for large devices here */
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media only screen and (min-width: $screen-xl-min) {
+    /* Your CSS rules for extra large devices here */
+}
+
+// Landscape orientation
+@media only screen and (orientation: landscape) {
+    /* Your CSS rules for landscape orientation here */
 }

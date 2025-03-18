@@ -11,7 +11,9 @@
     position: relative;
     //margin-bottom: 3rem;
 }
-.single-portfolio {
+.single-portfolio,
+.page-privacy-policy,
+.error404 {
     .header-container {
         background-color: $clr-black;
         h1 {

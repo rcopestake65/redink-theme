@@ -3,16 +3,29 @@
 /*////////////////404\\\\\\\\\\\\\\\*/
 
 .page-404 {
-    background-image: url(/wp-content/uploads/404.jpg);
+    background-image: url(/wp-content/uploads/404.webp);
     height: 70vh;
     background-repeat: no-repeat;
-    margin: 0 auto;
-    h1 {
-        text-align: center;
+    background-position: center;
+    display: grid;
+    place-content: center;
+    margin-top: 1rem;
+}
+.content-404 {
+    max-width: 800px;
+    background-color: $clr-white-transparent-70;
+    padding: 2rem;
+    h2 {
         font-size: 4rem;
+        text-align: center;
+        color: $clr-brand-red;
+        @include below(1000px) {
+            font-size: 2rem;
+        }
     }
     p {
         text-align: center;
-        font-size: 3rem;
+        font-size: clamp(1rem, 0.3333rem + 3.5556vw, 3rem);
+        font-weight: bold;
     }
 }

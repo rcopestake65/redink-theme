@@ -4,6 +4,9 @@
 */
 .hero__image {
     height: 100vh;
+    @include below(1000px) {
+        height: auto;
+    }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,6 +18,58 @@
     overflow: hidden;
     @include below(500px) {
         padding-top: 5rem;
+    }
+}
+.page-about-us .hero__image {
+    background-image: url(/wp-content/uploads/hero-11.webp);
+    @include below($screen-xs-max) {
+        background-image: url(/wp-content/uploads/hero-mobile-11.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+        background-image: url(/wp-content/uploads/hero-mobile-landscape-11.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+.page-our-work .hero__image {
+    background-image: url(/wp-content/uploads/hero-21.webp);
+    @include below($screen-xs-max) {
+        background-image: url(/wp-content/uploads/hero-mobile-10.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+        background-image: url(/wp-content/uploads/hero-mobile-landscape-10.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+.page-services .hero__image {
+    background-image: url(/wp-content/uploads/hero-09.webp);
+    @include below($screen-xs-max) {
+        background-image: url(/wp-content/uploads/hero-mobile-04.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+        background-image: url(/wp-content/uploads/hero-mobile-landscape-09.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+.page-contact .hero__image {
+    background-image: url(/wp-content/uploads/hero-30.webp);
+    @include below($screen-xs-max) {
+        background-image: url(/wp-content/uploads/hero-mobile-30.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        background-image: url(/wp-content/uploads/hero-mobile-landscape-30.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 }
 .photo-credit-container {
@@ -44,5 +99,48 @@
         color: $clr-black;
     }
 }
+//small hero
+.small-hero {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(-85px);
+    //compensate for negative translate
+    margin-bottom: -60px;
+    overflow: hidden;
+    @include below(500px) {
+        padding-top: 5rem;
+    }
+}
 
+//small hero with CTA
+.small-hero__content {
+    display: flex;
+    @include below(500px) {
+        display: block;
+    }
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+.small-hero__content__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    .brand {
+        border-bottom: none;
+    }
+    @include below(500px) {
+        grid-template-columns: 1fr;
+    }
+    h3 {
+        color: $clr-brand-red;
+        font-size: $fs-60;
+    }
+}
+.small-hero__content__grid__item-right {
+    padding: 1rem;
+    background-color: $clr-white-transparent-50;
+}
 //see sliders.scss for styles for the slider grid inside the hero

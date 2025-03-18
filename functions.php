@@ -5,12 +5,15 @@ function load_css()
     wp_register_style('style', get_template_directory_uri() . '/css/style.css', array(), false, 'all');
     wp_enqueue_style('style');
     wp_enqueue_style( 'font-awesome-free', '//use.fontawesome.com/releases/v6.3.0/css/all.css' );
-    wp_enqueue_style('cssgg', 'https://unpkg.com/css.gg/icons/all.css');
-    wp_enqueue_style('open-props', 'https://unpkg.com/open-props');
 }
 
 add_action('wp_enqueue_scripts', 'load_css');
-
+//thumbnail support
+add_theme_support( 'post-thumbnails' );
+// Then we'll add our 2 custom images
+add_image_size( 'thumbnail', 1600, 400, true );
+add_image_size( 'medium', 300, 300, true );
+add_image_size( 'large', 1024, 1024, true );
 //load js
 function loadjs()
 {
@@ -112,6 +115,7 @@ $args = array(
     //'supports' => array('title', 'editor','thumbnail', 'excerpt'),
     'menu_icon'   => 'dashicons-format-quote',
     'taxonomies' => array('category'),
+	'publicly_queryable'  => false
 );
 
 register_post_type('testimonials', $args);

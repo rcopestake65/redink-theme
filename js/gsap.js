@@ -1,7 +1,7 @@
 "use strict";
 //register GSAP
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(Flip);
+//gsap.registerPlugin(Flip);
 //hide warnings in console if gsap elements don't appear on different pages
 gsap.config({ nullTargetWarn: false });
 
@@ -22,25 +22,45 @@ if (document.body.classList.contains("home")) {
   );
 }
 
+//-----------------------------hero zoom effect
+const desktop = gsap.matchMedia();
+const zoom = document.querySelector(".zoom");
+desktop.add("(min-width: 1000px)", () => {
+  gsap.fromTo(
+    zoom,
+    {
+      backgroundSize: "100% 100%",
+    },
+    {
+      backgroundSize: "+=25% +=25%",
+      ease: Linear.easeNone,
+      duration: 10,
+    }
+  );
+});
 //----------------------------slider heading
 
 //play the animation on the first slide
-//the x position is set in the css to x -100px
-gsap.to(".header_active", {
-  x: 0,
-  duration: 1.5,
-  delay: 0.5,
-  opacity: 1,
-  ease: "bounce.out",
-});
-gsap.set(".icon_active", { opacity: 0 });
-gsap.to(".icon_active", {
-  scale: 1.2,
-  ease: "bounce.out",
-  opacity: 1,
-  duration: 1,
-  delay: 0.7,
-});
+//the zoom effect is only on desktops - so we use a matchMedia util from GSAP
+//const desktop = gsap.matchMedia();
+
+gsap.fromTo(
+  ".header_active",
+  {
+    x: -100,
+  },
+  { x: 0, duration: 1.5, delay: 0.25, opacity: 1, ease: "bounce.out" }
+);
+gsap.fromTo(
+  ".strapline_active",
+  { scale: 0.5, opacity: 0 },
+  {
+    scale: 1,
+    opacity: 1,
+    duration: 1,
+    delay: 0.5,
+  }
+);
 //then ste up a mutations observer so the animation plays each time a class is added to a header
 // Select all elements with the class you're interested in
 const heading = document.querySelectorAll(".slide__heading");
@@ -59,28 +79,37 @@ heading.forEach((element) => {
         // Check if the added class is the one you're interested in
         if (classNames.includes("header_active")) {
           // run gsap
-          gsap.to(".header_active", {
-            x: 0,
-            duration: 1.5,
-            delay: 0.5,
-            opacity: 1,
-            ease: "bounce.out",
-          });
-          gsap.set(".icon_active", { opacity: 0 });
-          gsap.to(".icon_active", {
-            scale: 1.2,
-            ease: "bounce.out",
-            opacity: 1,
-            duration: 1,
-            delay: 0.7,
-          });
+
+          gsap.fromTo(
+            ".header_active",
+            { x: -100, opacity: 0 },
+            {
+              x: 0,
+              duration: 1.5,
+              delay: 0.25,
+              opacity: 1,
+              ease: "bounce.out",
+            }
+          );
+
+          gsap.fromTo(
+            ".strapline_active",
+            { scale: 0.5, opacity: 0 },
+            {
+              scale: 1,
+              opacity: 1,
+              duration: 1,
+              delay: 0.5,
+            }
+          );
         } else if (!classNames.includes("header_active"))
           // run gsap to reset position and opacity of header once the class has been removed - this way if the slides rotate and start again, the animation will also run again
+
           gsap.set(".header_active", {
             x: -100,
             opacity: 0,
           });
-        gsap.set(".icon_active", { scale: 1, opacity: 0 });
+        gsap.set(".strapline_active", { scale: 1, opacity: 0 });
       }
     });
   });
@@ -133,6 +162,18 @@ gsap.fromTo(
   }
 );
 gsap.fromTo(
+  ".what",
+  { x: -60, opacity: 0 },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".what",
+    },
+  }
+);
+gsap.fromTo(
   ".testimonial",
   { x: -60, opacity: 0 },
   {
@@ -141,6 +182,33 @@ gsap.fromTo(
     duration: 1,
     scrollTrigger: {
       trigger: ".testimonial",
+    },
+  }
+);
+gsap.fromTo(
+  ".articles",
+  { x: -60, opacity: 0 },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".articles",
+    },
+  }
+);
+gsap.fromTo(
+  ".price",
+  { x: -60, opacity: 0 },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+
+    scrollTrigger: {
+      trigger: ".price",
+      start: "top 75%",
+      end: "bottom 25%",
     },
   }
 );
@@ -158,6 +226,24 @@ gsap.fromTo(
       trigger: ".isotope-container__item",
       //markers: true,
       start: "top 85%",
+      end: "bottom 25%",
+    },
+  }
+);
+
+const moreWorkBtn = document.querySelector(".gsap-more-work-btn-container");
+gsap.fromTo(
+  moreWorkBtn,
+  { x: -60, opacity: 0 },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    delay: 0.75,
+    ease: "bounce.out",
+    scrollTrigger: {
+      trigger: ".gsap-more-work-btn-container",
+      start: "top 55%",
       end: "bottom 25%",
     },
   }
@@ -195,6 +281,54 @@ gsap.fromTo(
     },
   }
 );
+
+//home and article page latest articles
+const articleGrid = document.querySelector(".recent-posts-grid");
+const articleItem = document.querySelectorAll(".recent-posts-grid-item");
+const articleItemImg = document.querySelectorAll(".recent-posts-grid__image");
+const articleItemHeader = document.querySelectorAll(".recent-posts-grid-title");
+const moreBtn = document.querySelector(".gsap-more-btn-container");
+
+articleItem.forEach((item, index) => {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "item",
+        start: "top 75%",
+        end: "bottom 25%",
+        //markers: true,
+      },
+    })
+    .fromTo(
+      item.querySelector(".recent-posts-grid__image"),
+      { opacity: 0, y: 200 },
+      { opacity: 1, y: 0, duration: 0.5 }
+    )
+    .fromTo(
+      item.querySelector(".recent-posts-grid-title"),
+      { opacity: 0, y: 200 },
+      { opacity: 1, y: 0, duration: 0.5 },
+      "-=0.25" // add a negative stagger to align with previous animation
+    );
+});
+
+gsap.fromTo(
+  moreBtn,
+  { x: -60, opacity: 0 },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    delay: 0.75,
+    ease: "bounce.out",
+    scrollTrigger: {
+      trigger: articleItem,
+      start: "top 75%",
+      end: "bottom 25%",
+    },
+  }
+);
+
 //About page hero CTA
 const overlay = document.querySelector(".hero__overlay");
 const ctaHeader = document.querySelector(".hero__overlay__left h2");
@@ -248,8 +382,12 @@ ctaScreenshots.forEach((item) => {
 //about page intro, biog image and quotes
 const intro = document.querySelector(".intro");
 const btn = document.querySelector(".about-grid__left .gsap-btn-container");
-const biogImg = document.querySelector(".about-grid__right img");
-const caption = document.querySelector(".caption");
+const biogImgOne = document.querySelector(".biog-img-one");
+const biogImgTwo = document.querySelector(".biog-img-two");
+const biogArrowOne = document.querySelector(".biog-arrow-one");
+const biogArrowTwo = document.querySelector(".biog-arrow-two");
+const captionOne = document.querySelector(".caption-one");
+const captionTwo = document.querySelector(".caption-two");
 const quotes = document.querySelector(".quote-slides-container");
 
 gsap
@@ -271,7 +409,7 @@ gsap
     }
   )
   .fromTo(
-    biogImg,
+    biogImgOne,
     { x: 60, opacity: 0 },
     {
       x: 0,
@@ -280,9 +418,48 @@ gsap
       ease: "back",
     }
   )
-
   .fromTo(
-    caption,
+    biogImgTwo,
+    { x: 60, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      duration: 0.5,
+      ease: "back",
+    }
+  )
+  .fromTo(
+    biogArrowOne,
+    { x: 60, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      duration: 0.5,
+      ease: "back",
+    }
+  )
+  .fromTo(
+    biogArrowTwo,
+    { x: 60, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      duration: 0.5,
+      ease: "back",
+    }
+  )
+  .fromTo(
+    captionOne,
+    { x: 60, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      duration: 0.5,
+      ease: "back",
+    }
+  )
+  .fromTo(
+    captionTwo,
     { x: 60, opacity: 0 },
     {
       x: 0,
@@ -483,6 +660,94 @@ serviceBlock.forEach((item) => {
     }
   );
 });
+//services prices
+const priceGridItem = gsap.utils.toArray(".services-price-grid__item");
+const headerItem = document.querySelectorAll(
+  ".services-price-grid__item__header"
+);
+const straplineItem = document.querySelectorAll(
+  ".services-price-grid__item__strapline"
+);
+const priceItem = document.querySelectorAll(
+  ".services-price-grid__item__price"
+);
+const contentItem = document.querySelectorAll(
+  ".services-price-grid__item__content"
+);
+
+priceGridItem.forEach((item) => {
+  gsap.fromTo(
+    priceGridItem,
+    { x: -50, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      ease: "back",
+      scrollTrigger: {
+        trigger: priceGridItem,
+        start: "top 75%",
+        end: "bottom 25%",
+      },
+    }
+  );
+  gsap.fromTo(
+    headerItem,
+    {
+      x: -50,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      delay: 0.2,
+      ease: "back",
+    }
+  );
+  gsap.fromTo(
+    straplineItem,
+    {
+      x: -50,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      delay: 0.4,
+      ease: "back",
+    }
+  );
+  gsap.fromTo(
+    priceItem,
+    {
+      x: -50,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      delay: 0.6,
+      ease: "back",
+    }
+  );
+  gsap.fromTo(
+    contentItem,
+    {
+      x: -50,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      delay: 0.7,
+      ease: "back",
+    }
+  );
+});
 //testimonial container
 
 //testimonial slides
@@ -535,3 +800,51 @@ gsap
       //stagger: 0.25,
     }
   );
+//--------------contact page
+//address grid items
+if (contactPage) {
+  const contactGrid = document.querySelector(".contact-grid");
+  const contactItem = document.querySelectorAll(".contact-grid__item");
+  const map = document.querySelector(".googlemap");
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: contactGrid,
+        start: "top 75%",
+        end: "bottom 25%",
+        //markers: true,
+      },
+    })
+    .fromTo(
+      contactItem,
+      { opacity: 0, y: 200 },
+      { opacity: 1, y: 0, duration: 0.75, stagger: 0.25 }
+    )
+    .fromTo(map, { y: 200 }, { y: 0, duration: 0.75 });
+}
+//portfolio single page
+const screenshot = document.querySelector(".portfolio-grid__left img");
+gsap.fromTo(
+  screenshot,
+  { opacity: 0, scale: 0.5 },
+  { opacity: 1, scale: 1, duration: 0.5 }
+);
+//-------------------landing page
+const landingItem = gsap.utils.toArray(".whatwecando-grid__item");
+landingItem.forEach((item) => {
+  gsap.fromTo(
+    landingItem,
+    { x: -50, opacity: 0 },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      ease: "back",
+      scrollTrigger: {
+        trigger: priceGridItem,
+        start: "top 75%",
+        end: "bottom 25%",
+      },
+    }
+  );
+});

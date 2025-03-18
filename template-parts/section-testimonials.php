@@ -8,9 +8,9 @@
             <div class="testimonial-container">
                 <div class="testimonial-btn-container">
                     <div class="testimonial-btn-container__inner">
-                        <button type="button" class="testimonial-prevBtn"><i
-                                class="fa-regular fa-circle-left fa-xl"></i></button>
-                        <button type="button" class="testimonial-nextBtn"><i
+                        <button type="button" aria-label="scroll to previous testimonials"
+                            class="testimonial-prevBtn"><i class="fa-regular fa-circle-left fa-xl"></i></button>
+                        <button type="button" aria-label="scroll to next testimonials" class="testimonial-nextBtn"><i
                                 class="fa-regular fa-circle-right fa-xl"></i></button>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
 $args = array(
     'post_type' => 'testimonials',
     'order' => 'ASC',
-    'posts_per_page' => 6,
+    'posts_per_page' => 9,
     'orderby' => 'rand',
 
     );
@@ -32,8 +32,17 @@ $args = array(
                 // Loop output goes here ?>
                         <div class="testimonial-slide">
                             <div class="testimonial-slide__1">
-                                <?php if( get_field('client_image') ): ?>
-                                <img src="<?php the_field('client_image'); ?>" />
+
+                                <?php
+                            $clientImage = get_field('client_image')
+                                
+                                ?>
+                                <?php
+                                if($clientImage): 
+                                $url = $clientImage['url'];
+                                $alt = $clientImage['alt'];
+                                ?>
+                                <img alt="<?php echo ($alt); ?>" src="<?php echo esc_url($url); ?>" />
                                 <?php endif; ?>
 
                             </div>
@@ -42,8 +51,18 @@ $args = array(
                                 <?php if( get_field('position') ): ?>
                                 <p> <?php the_field('position'); ?></p>
                                 <?php endif; ?>
-                                <?php if( get_field('website') ): ?>
-                                <p> <?php the_field('website'); ?></p>
+
+
+                                <?php 
+                                $link = get_field('website');
+                                if($link): 
+                                    $link_url = $link['url'];
+                                    $link_title = $link['title'];
+                                    $link_target = $link['target'] ? $link['target'] : '_self';
+                                ?>
+                                <p> <a class="button testimonial" href="<?php echo esc_url( $link_url ); ?>"
+                                        target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                                </p>
                                 <?php endif; ?>
                             </div>
                             <div class="testimonial-slide__3">

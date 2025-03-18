@@ -1,7 +1,13 @@
 <?php get_header();?>
 <section class="page-404">
-    <h1>Oops something went wrong</h1>
-    <p>The page you are looking for is not available</p>
+    <div class="content-404">
+        <h2>Oops... something went wrong</h2>
+        <p>The page you are looking for is not available</p>
+        <p>
+            Please use the menu above or return to the<br /> <a class="button" href="/">homepage</a>
+        </p>
+    </div>
+
 </section>
 
 

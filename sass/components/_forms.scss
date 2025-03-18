@@ -1,0 +1,83 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////FORMS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+//contact form
+#wpforms-644 {
+    padding-left: 1rem;
+    @include below(500px) {
+        padding-left: 0;
+    }
+    input,
+    textarea {
+        background-color: transparent;
+        color: $clr-white;
+        -ms-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 350px;
+        border: none;
+        border-bottom: 1px solid $clr-white;
+        @include below(500px) {
+            width: 280px;
+        }
+    }
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: $clr-white;
+    }
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $clr-white;
+    }
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: $clr-white;
+    }
+    :-moz-placeholder {
+        /* Firefox 18- */
+        color: $clr-white;
+    }
+}
+//audit form
+#wpforms-1118 {
+    padding-left: 1rem;
+    @include below(500px) {
+        padding-left: 0;
+    }
+    label {
+        color: $clr-white;
+    }
+    input,
+    textarea {
+        background-color: transparent;
+        color: $clr-white;
+        -ms-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 350px;
+        border: none;
+        border-bottom: 1px solid $clr-white;
+        @include below(500px) {
+            width: 280px;
+        }
+    }
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: $clr-white;
+    }
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $clr-white;
+    }
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: $clr-white;
+    }
+    :-moz-placeholder {
+        /* Firefox 18- */
+        color: $clr-white;
+    }
+}

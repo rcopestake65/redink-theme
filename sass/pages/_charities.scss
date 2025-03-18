@@ -1,0 +1,75 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////CHARITIES PAGE \\\\\\\\\\\\\\\*/
+.design-grid {
+    display: grid;
+    // gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    @include below(500px) {
+        grid-template-columns: 1fr;
+    }
+}
+.design-grid__item.copy {
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
+    background-color: #4799d6;
+    color: $clr-white;
+    padding: 1rem;
+    h4 {
+        font-size: $fs-20;
+        padding-bottom: 3rem;
+    }
+    font-size: $fs-20;
+}
+.whatwecando-grid {
+    padding-top: 1px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include below(850px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include below(500px) {
+        grid-template-columns: 1fr;
+    }
+    gap: 1px;
+}
+.whatwecando-grid__item {
+    padding: 1rem;
+
+    h4 {
+        font-size: $fs-20;
+        letter-spacing: 1px;
+    }
+}
+.item-1 {
+    background-color: #ffca3a;
+}
+.item-2 {
+    background-color: #36959b;
+}
+.item-3 {
+    background-color: #575ba0;
+    color: $clr-white;
+}
+.item-4 {
+    background-color: #ef4a86;
+}
+.item-5 {
+    background-color: #afb22b;
+}
+.item-6 {
+    background-color: #ff924e;
+}
+.item-7 {
+    background-color: #ffca3a;
+}
+.item-8 {
+    background-color: #36959b;
+}
+//modal overlay containing the audit form
+.modal-overlay {
+    .wpforms-container-full {
+        display: none;
+    }
+}

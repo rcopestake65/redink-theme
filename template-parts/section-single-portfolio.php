@@ -8,12 +8,13 @@
     <h2 class="brand"><?php the_title(); ?></h2>
     <div class="portfolio-grid">
         <div class="portfolio-grid__left">
-            <img src="<?php the_field('image'); ?>" />
+            <img class="img-shape" alt="<?php the_title(); ?> screenshot" src="<?php the_field('screenshot'); ?>" />
         </div>
         <div class="portfolio-grid__right">
 
-
+            <?php if( get_field('copy') ): ?>
             <p class="portfolio_grid__copy"><?php the_field('copy'); ?></p>
+            <?php endif; ?>
             <?php $clientURL = get_field('client_url'); ?>
             <div class="portfolio-grid__right__inner">
                 <p>Client:</p>
@@ -70,36 +71,12 @@ if( $link ): ?><p>Website:</p>
     </div>
     <!--.portfolio-grid-->
 
-    <div class="portfolio-images-grid">
-        <?php
+
+    <?php
     
-// Check rows existexists.
-if( have_rows('portfolio_images') ):
-
-    // Loop through rows.
-    while( have_rows('portfolio_images') ) : the_row();
-
-        // Load sub field value.
-        $image = get_sub_field('image');
-        $picture = $image['sizes']['large']; //no idea why I need this - but nothing displays otherwise!!
-        // Do something...
-
-        ?>
-
-        <img src="<?php echo $picture;?>" />
-
-        <?php
-// End loop.
     endwhile;
-   
-// No value.
-else :
-// Do something...
-endif;
-// End the loop.
-endwhile;
 ?>
-    </div>
+
     <!--.portfolio-images-grid-->
     <?php get_template_part('template-parts/section','isotope-single'); ?>
 </div>

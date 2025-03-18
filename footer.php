@@ -3,25 +3,32 @@
 <!--close container for full width bg to footer-->
 
 <div class="footer-container">
+
     <div class="container">
 
         <div class="footer-content">
-            <div>
-                <a href="https://www.linkedin.com/company/red-ink-creative/about/" target="_blank" title=""
-                    class="multi-icons-link multi-iconsfab-linkedin-in">
+            <div class="footer-navigation">
+                <a id="logo" href="<?php echo get_bloginfo('url') . '/'; ?>">
+                    <h4 class="logo"><span>Red Ink Creative</span>
+                    </h4>
 
-                    <i class="fa-brands fa-linkedin fa-2xl"></i>
                 </a>
+                <nav role="navigation">
 
-                <a href="https://twitter.com/redinkcreative" target="_blank" title=""
-                    class="multi-icons-link multi-iconsfab-twitter">
-
-                    <i class="fa-brands fa-square-twitter fa-2xl"></i>
-                </a>
+                    <?php
+wp_nav_menu(
+array(
+'theme-location' => 'main-menu',
+'menu_class' => 'menu',
+)
+);
+?>
             </div>
-            <div>
-                <a href="/contact">Contact</a>
+
+            <div class="address">
+                <a href="/contact">Contact us</a>
                 <p class="address">
+                    <a href="tel:020 8102 0776">020 8102 0776</a><br />
                     St. Margaret's House<br />
                     21 Old Ford Road<br />
                     London<br />
@@ -29,12 +36,16 @@
                 </p>
             </div>
             <div>
-                <ul>
-                    <li><a href="/privacy-policy">Privacy Policy</a></li>
-                    <li><a href="/cookie-use-policy">Cookie Policy</a></li>
-                </ul>
+                <p><a href="/privacy-policy">Privacy Policy</a></p>
+                <div class="trust-pilot">
+
+                    <a href="https://uk.trustpilot.com/review/redink.co.uk" target="_blank">
+                        <img src="/wp-content/uploads/trust-pilot-logo-white.svg" alt="Trust Pilot"></a>
+                    <a href="https://uk.trustpilot.com/review/redink.co.uk" target="_blank"><img
+                            src="/wp-content/uploads/stars-4.5.svg" alt="Trust Pilot stars"></a>
+                </div>
             </div>
-            <div>
+            <div class="copyright">
                 <p>&copy; Copyright <span id="date"></span> Red Ink Creative
                 </p>
             </div>

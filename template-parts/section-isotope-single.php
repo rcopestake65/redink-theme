@@ -21,7 +21,7 @@ foreach ($categories as $category){
     echo $category->slug.' ';
 }
 ?>">
-            <img loading="lazy" class="" src="<?php the_field('image'); ?>" />
+            <img loading="lazy" alt="<?php the_field('client'); ?>" src="<?php the_field('image'); ?>" />
 
             <a href="<?php the_permalink(); ?>">
                 <div class="isotope-container__overlay">

@@ -18,7 +18,15 @@
 section {
     margin-bottom: 4rem;
 }
-
+//Posts
+.posts-container {
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    //gap: 2rem;
+    @include below(500px) {
+        grid-template-columns: 1fr;
+    }
+}
 //Footer Container
 .footer-container {
     background-color: $clr-black;
@@ -29,7 +37,7 @@ section {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 100px 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 0 2rem;
     gap: 1rem;
     @include below(550px) {
@@ -37,10 +45,13 @@ section {
     }
     a {
         color: $clr-white;
-        display: inline-block;
+        //display: inline-block;
         transition: 300ms;
         &:hover {
             color: $clr-brand-red;
         }
+    }
+    .footer-navigation {
+        grid-column: 1/-1;
     }
 }

@@ -2,7 +2,7 @@
 
 //check for page variable
 const frontPage = document.querySelector(".home");
-const portfolioPage = document.querySelector(".page-work");
+const portfolioPage = document.querySelector(".page-our-work");
 const aboutPage = document.querySelector(".page-about-us");
 const servicesPage = document.querySelector(".page-services");
 const contactPage = document.querySelector(".page-contact");
@@ -46,28 +46,27 @@ toggleBtn.addEventListener("click", function () {
 ////------------------hero slider (homepage)
 if (frontPage) {
   const slides = document.querySelectorAll(".slide");
-  const prevButton = document.querySelector(".prev-btn");
-  const nextButton = document.querySelector(".next-btn");
   const header = document.querySelectorAll(".slide__heading");
-  const icon = document.querySelectorAll(".slide__icon");
+  const slideStrapline = document.querySelectorAll(".slide__strapline");
+
   let index = 0;
 
   function showSlide(index) {
-    // Remove the 'active' class from all slides
+    // Remove the 'active' classes from all slides
     slides.forEach((slide) => {
       slide.classList.remove("active");
     });
     header.forEach((item) => {
       item.classList.remove("header_active");
     });
-    icon.forEach((item) => {
-      item.classList.remove("icon_active");
+    slideStrapline.forEach((item) => {
+      item.classList.remove("strapline_active");
     });
 
     // Add the 'active' class to the specified slide
     slides[index].classList.add("active");
     header[index].classList.add("header_active");
-    icon[index].classList.add("icon_active");
+    slideStrapline[index].classList.add("strapline_active");
   }
 
   function showNextSlide() {
@@ -100,11 +99,11 @@ if (frontPage) {
   showSlide(0);
 
   // Set up event listeners for the previous and next buttons
-  prevButton.addEventListener("click", showPrevSlide);
-  nextButton.addEventListener("click", showNextSlide);
+  // prevButton.addEventListener("click", showPrevSlide);
+  // nextButton.addEventListener("click", showNextSlide);
 
   // Set an interval to show the next slide every 5 seconds
-  setInterval(showNextSlide, 5000);
+  setInterval(showNextSlide, 7000);
 }
 //---------------decorative images slider
 if (frontPage) {
@@ -203,6 +202,17 @@ if (aboutPage || portfolioPage) {
   // Set an interval to show the next slide every 5 seconds
   setInterval(showNextaboutSlide, 5000);
 }
+//----------------------About page biogs click to show on touch devices
+const biogOverlay = document.querySelectorAll(".biog-imgs__overlay");
+const biogOverlayItem = document.querySelectorAll(".biog-imgs__overlay__item");
+
+biogOverlay.forEach((item) => {
+  item.addEventListener("click", () => {
+    biogOverlayItem.forEach((item) => {
+      item.classList.toggle("show-biog");
+    });
+  });
+});
 //----------------------About page quotes slider
 if (aboutPage) {
   const quotesSlides = document.querySelectorAll(".quote-slides");
@@ -419,3 +429,50 @@ closeBtn.forEach((item) => {
 //     modals.style.display = "none";
 //   }
 // };
+
+//web audit modal on Charities landing page
+//services modal on about page
+const openAuditBtn = document.querySelector("[data-filter]");
+const closeAuditBtn = document.querySelector(".close-modal");
+const auditModals = document.querySelector(".modal-overlay");
+const wpForms = document.querySelector(".wpforms-container-full");
+//const body = document.querySelector("body");
+
+openAuditBtn.addEventListener("click", () => {
+  auditModals.classList.add("show-modal");
+  wpForms.classList.add("show");
+  gsap.fromTo(
+    ".show-modal",
+    { scale: 0 },
+    {
+      scale: 1,
+      duration: 0.5,
+      ease: "easeOut",
+    }
+  );
+});
+
+closeAuditBtn.addEventListener("click", () => {
+  auditModals.classList.remove("show-modal");
+  wpForms.classList.remove("show");
+});
+
+//add aria attribute to icon links in header and footer for accessibility
+const iconTwitter = document.querySelectorAll(".icon-link-twitter");
+const iconLinkdIn = document.querySelectorAll(".icon-link-linkdin");
+
+iconTwitter.forEach((item) => {
+  item.parentElement.setAttribute("aria-label", "Twitter");
+});
+
+iconLinkdIn.forEach((item) => {
+  item.parentElement.setAttribute("aria-label", "LinkdIn");
+});
+
+//dynamic grid columns on single posts page so that if an image is added to a paragraph there are two cols otherwise just one
+
+const postImg = document.querySelectorAll(".posts-writtent-content__item__img");
+
+postImg.forEach((item) => {
+  item.parentElement.classList.add("two-cols");
+});

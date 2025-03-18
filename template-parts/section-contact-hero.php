@@ -1,8 +1,5 @@
-<?php if( get_field('hero') ): ?>
-
-<div class="hero__image"
-    style="
-background-image: <?php if(get_field ('image_overlay')): ?> <?php the_field('image_overlay')?>,<?php endif; ?> url(<?php the_field('hero'); ?>">
+<div class="hero__image zoom" style="
+background-image: <?php if(get_field ('image_overlay')): ?> <?php the_field('image_overlay')?>,<?php endif; ?> ">
 
     <div class="container">
 
@@ -47,4 +44,3 @@ if( $credit ):
     <!--photo credit-->
 </div>
 <!--hero__image-->
-<?php endif; ?>

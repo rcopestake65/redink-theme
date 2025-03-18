@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+# Your rule content
+
+-
+When working with WordPress projects, follow WordPress Coding Standards and best practices.
+
+- You can @ files here
+- You can use markdown but dont have to
