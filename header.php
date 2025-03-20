@@ -21,6 +21,7 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+
 	<meta name="ahrefs-site-verification" content="a21d1cfe50ad65d9c6accdcd6add3d4c1ad306be6aa5fdd441f464989a6ebbdf">
     <link rel="icon" type="image/x-icon" href="/wp-content/uploads/favicon.png">
     <title>Red Ink Creative | <?php the_title();?></title>

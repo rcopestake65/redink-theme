@@ -59,6 +59,19 @@
         background-repeat: no-repeat;
     }
 }
+// .page-wordpress-maintenance .hero__image {
+//     background-image: url(/wp-content/uploads/hero-09.webp);
+//     @include below($screen-xs-max) {
+//         background-image: url(/wp-content/uploads/hero-mobile-04.webp);
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//     }
+//     @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+//         background-image: url(/wp-content/uploads/hero-mobile-landscape-09.webp);
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//     }
+// }
 .page-contact .hero__image {
     background-image: url(/wp-content/uploads/hero-30.webp);
     @include below($screen-xs-max) {

@@ -73,10 +73,9 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -99,24 +98,19 @@ p.caption {
 }
 
 a {
-  color: black;
+  color: hsl(0, 0%, 0%);
   text-decoration: none;
   transition: 300ms;
 }
 
 a:visited {
-  color: black;
+  color: hsl(0, 0%, 0%);
 }
 
 a:hover {
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
 }
-.posts-main .posts-written-content a.no-styles{
-	background:none;
-}
-.posts-main .posts-written-content a:hover.no-styles{
-	background:none;
-}
+
 ul {
   list-style: none;
   margin: 0;
@@ -138,9 +132,9 @@ h6 {
 h2.brand {
   font-size: 3.75rem;
   letter-spacing: 1px;
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
   text-transform: uppercase;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid hsl(0, 0%, 0%);
   margin-bottom: 1rem;
 }
 @media (max-width: 400px) {
@@ -282,7 +276,7 @@ body {
   line-height: 1.5;
   margin: 0 auto;
   font-family: "Nunito", sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  color: hsla(0, 0%, 0%, 0.8);
 }
 
 /*
@@ -315,8 +309,8 @@ section {
 }
 
 .footer-container {
-  background-color: black;
-  color: white;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
   padding: 2rem 0 1rem 0;
   font-size: 0.875rem;
 }
@@ -333,11 +327,11 @@ section {
   }
 }
 .footer-content a {
-  color: white;
+  color: hsl(0, 0%, 100%);
   transition: 300ms;
 }
 .footer-content a:hover {
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
 }
 .footer-content .footer-navigation {
   grid-column: 1/-1;
@@ -358,7 +352,7 @@ section {
 .single-portfolio .header-container,
 .page-privacy-policy .header-container,
 .error404 .header-container {
-  background-color: black;
+  background-color: hsl(0, 0%, 0%);
 }
 .single-portfolio .header-container h1,
 .page-privacy-policy .header-container h1,
@@ -370,7 +364,7 @@ section {
 
 @media (min-width: 1000px) {
   .header-container {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: hsla(0, 0%, 0%, 0.25);
   }
 }
 .header-container a {
@@ -409,14 +403,13 @@ section {
 
 @media (min-width: 900px) {
   .menu .current_page_item > a {
-    color: white;
-    border-bottom: 2px solid white;
+    color: hsl(0, 0%, 100%);
+    border-bottom: 2px solid hsl(0, 0%, 100%);
     padding-bottom: 5px;
     cursor: default;
   }
-
   .menu .current-menu-ancestor .current_page_item > a {
-    color: black;
+    color: hsl(0, 0%, 0%);
   }
 }
 .menu li {
@@ -430,7 +423,7 @@ section {
   font-size: 1.125rem;
   font-weight: bold;
   letter-spacing: 1px;
-  color: white;
+  color: hsl(0, 0%, 100%);
   text-decoration: none;
 }
 
@@ -442,7 +435,7 @@ section {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -470,7 +463,7 @@ section {
   height: 0px;
   overflow: hidden;
   transition: all 0.5s linear;
-  background-color: #cc0000;
+  background-color: hsl(0, 100%, 40%);
 }
 
 .mobile-sub-menu {
@@ -480,9 +473,8 @@ section {
 
 @media (max-width: 1050px) {
   .current-menu-item li a {
-    color: white;
+    color: hsl(0, 0%, 100%);
   }
-
   .mobile-menu {
     padding: 2rem 0;
   }
@@ -490,38 +482,34 @@ section {
     padding: 0.25rem 0 0.25rem 1rem;
   }
   .mobile-menu li a {
-    color: white;
+    color: hsl(0, 0%, 100%);
     width: 100%;
     display: inline-block;
     font-size: 1.375rem;
   }
   .mobile-menu li a:hover {
-    color: #cc0000;
+    color: hsl(0, 100%, 40%);
   }
   .mobile-menu li a:active {
-    color: white;
+    color: hsl(0, 0%, 100%);
   }
   .mobile-menu li.current-menu-item a {
-    color: black;
+    color: hsl(0, 0%, 0%);
   }
-
   .toggle-btn-container {
     display: block;
   }
-
   .nav-toggle {
     position: absolute;
     top: 1.75rem;
     right: 1rem;
     transition: all 0.3s linear;
     width: 50px;
-    background-color: black;
+    background-color: hsl(0, 0%, 0%);
   }
-
   .menu {
     display: none;
   }
-
   .menu {
     flex-direction: column;
   }
@@ -556,7 +544,7 @@ section {
   margin-bottom: 1rem;
   z-index: 10;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid hsla(0, 100%, 100%, 0.25);
 }
 .footer-navigation h4 {
   background-image: url(/wp-content/uploads/logo-inverted.png);
@@ -608,7 +596,7 @@ section {
 .biog-arrow-one,
 .biog-arrow-two {
   transform: translateY(-20px);
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 
 .biog-imgs__overlay {
@@ -622,8 +610,8 @@ section {
   width: 100%;
   height: 100%;
   z-index: 20;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  color: hsl(0, 0%, 100%);
+  background-color: hsla(0, 0%, 0%, 0.5);
   opacity: 0;
   transition: opacity 0.5s;
   display: grid;
@@ -644,10 +632,10 @@ section {
   }
 }
 .biog-imgs__overlay__item a {
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 .biog-imgs__overlay__item a:hover {
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
 }
 
 .show-biog {
@@ -734,17 +722,17 @@ section {
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   border-radius: 18px;
   background: #ffffff;
-  box-shadow: 2px 2px 5px 0px #e6e6e6;
+  box-shadow: 2px 2px 5px 0px rgb(230, 230, 230);
   transition: all 0.3s linear;
-  color: black;
+  color: hsl(0, 0%, 0%);
   padding: 2rem;
   height: 300px;
 }
 .contact-grid__item:hover {
-  box-shadow: 9px 9px 8px #0c96c02b, -9px -9px 8px #fff;
+  box-shadow: 9px 9px 8px rgba(12, 150, 192, 0.168627451), -9px -9px 8px #fff;
 }
 .contact-grid__item h3 {
   font-size: 2rem;
@@ -756,8 +744,7 @@ section {
 
 .googlemap {
   position: relative;
-  padding-bottom: 25%;
-  /* 4:3 ratio*/
+  padding-bottom: 25%; /* 4:3 ratio*/
   height: 0;
   overflow: hidden;
 }
@@ -788,13 +775,13 @@ section {
 
 .content-404 {
   max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: hsla(0, 0%, 100%, 0.75);
   padding: 2rem;
 }
 .content-404 h2 {
   font-size: 4rem;
   text-align: center;
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
 }
 @media (max-width: 1000px) {
   .content-404 h2 {
@@ -817,7 +804,7 @@ section {
 
 .icon-grid__item i {
   font-size: 5.313rem;
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 @media (max-width: 900px) {
   .icon-grid__item i {
@@ -843,17 +830,17 @@ section {
   display: flex;
   text-align: center;
   flex-direction: column;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   border-radius: 18px;
   background: #ffffff;
-  box-shadow: 2px 2px 5px 0px #e6e6e6;
+  box-shadow: 2px 2px 5px 0px rgb(230, 230, 230);
   transition: all 0.3s linear;
-  color: black;
+  color: hsl(0, 0%, 0%);
   padding: 2rem;
 }
 .services-main-grid__item:hover,
 .services-price-grid__item:hover {
-  box-shadow: 9px 9px 8px #0c96c02b, -9px -9px 8px #fff;
+  box-shadow: 9px 9px 8px rgba(12, 150, 192, 0.168627451), -9px -9px 8px #fff;
 }
 .services-main-grid__item p,
 .services-price-grid__item p {
@@ -881,7 +868,7 @@ section {
 }
 .services-price-grid__item h4 {
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  -webkit-text-stroke: 1px #23cd72;
+  -webkit-text-stroke: 1px hsl(148, 71%, 47%);
   font-size: 3rem;
 }
 @media (max-width: 500px) {
@@ -893,7 +880,7 @@ section {
 /*////////////////POSTS\\\\\\\\\\\\\\\*/
 .posts-main {
   transform: translateY(-200px);
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   padding: 2rem;
 }
 @media (max-width: 500px) {
@@ -906,18 +893,18 @@ section {
   padding-top: 1rem;
 }
 .posts-main .posts-written-content a {
-  background-color: rgba(255, 214, 92, 0.9);
+  background-color: hsla(45, 100%, 68%, 0.9);
   padding: 0 5px;
   border-radius: 3px;
 }
 .posts-main .posts-written-content a:hover {
-  background-color: #404b68;
-  color: white;
+  background-color: hsl(224, 24%, 33%);
+  color: hsl(0, 0%, 100%);
 }
 
 .posts-written-content__introduction {
   padding: 2.5rem;
-  border: 5px solid rgba(255, 214, 92, 0.9);
+  border: 5px solid hsla(45, 100%, 68%, 0.9);
   border-right: none;
   border-bottom: none;
   margin-bottom: 1rem;
@@ -952,12 +939,12 @@ section {
   gap: 1rem;
   margin-top: 1rem;
   padding: 1rem;
-  box-shadow: 2px 2px 5px 0px #e6e6e6;
+  box-shadow: 2px 2px 5px 0px rgb(230, 230, 230);
   transition: all 0.3s linear;
   overflow: hidden;
 }
 .recent-posts-grid:hover {
-  box-shadow: 9px 9px 8px #0c96c02b, -9px -9px 8px #fff;
+  box-shadow: 9px 9px 8px rgba(12, 150, 192, 0.168627451), -9px -9px 8px #fff;
 }
 
 .recent-posts-grid-item {
@@ -981,12 +968,12 @@ section {
   max-height: 300px;
 }
 .home .recent-posts-grid-item {
-  box-shadow: 2px 2px 5px 0px #e6e6e6;
+  box-shadow: 2px 2px 5px 0px rgb(230, 230, 230);
   transition: all 0.3s linear;
   padding: 2rem;
 }
 .home .recent-posts-grid-item:hover {
-  box-shadow: 9px 9px 8px #0c96c02b, -9px -9px 8px #fff;
+  box-shadow: 9px 9px 8px rgba(12, 150, 192, 0.168627451), -9px -9px 8px #fff;
 }
 .home .recent-posts-grid-item .recent-posts-grid-title {
   margin-top: 1rem;
@@ -1009,13 +996,13 @@ section {
 
 .recent-posts-grid-item {
   overflow: hidden;
-  box-shadow: 2px 2px 5px 0px #e6e6e6;
+  box-shadow: 2px 2px 5px 0px rgb(230, 230, 230);
   transition: all 0.3s linear;
   overflow: hidden;
   padding: 1rem;
 }
 .recent-posts-grid-item:hover {
-  box-shadow: 9px 9px 8px #0c96c02b, -9px -9px 8px #fff;
+  box-shadow: 9px 9px 8px rgba(12, 150, 192, 0.168627451), -9px -9px 8px #fff;
 }
 
 /*////////////////CHARITIES PAGE \\\\\\\\\\\\\\\*/
@@ -1033,7 +1020,7 @@ section {
   display: flex;
   flex-direction: column;
   background-color: #4799d6;
-  color: white;
+  color: hsl(0, 0%, 100%);
   padding: 1rem;
   font-size: 1.25rem;
 }
@@ -1077,7 +1064,7 @@ section {
 
 .item-3 {
   background-color: #575ba0;
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 
 .item-4 {
@@ -1112,7 +1099,7 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s linear;
-  background-color: black;
+  background-color: hsl(0, 0%, 0%);
   border-radius: 5px;
 }
 
@@ -1120,7 +1107,7 @@ button {
   transition: none;
 }
 .close-modal:hover {
-  background-color: #cc0000;
+  background-color: hsl(0, 100%, 40%);
 }
 
 .button,
@@ -1133,23 +1120,23 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s linear;
-  background-color: black;
+  background-color: hsl(0, 0%, 0%);
   border-radius: 5px;
 }
 .button.testimonial,
 #wpforms-submit-644.testimonial,
 #wpforms-submit-1118.testimonial {
-  background-color: #404b68;
+  background-color: hsl(224, 24%, 33%);
   padding: 0.25rem 0.5rem;
 }
 .button.testimonial:hover,
 #wpforms-submit-644.testimonial:hover,
 #wpforms-submit-1118.testimonial:hover {
-  color: white;
-  background-color: #404b68;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(224, 24%, 33%);
   scale: 1.05;
-  -webkit-box-shadow: 1px 1px 0px 1px white;
-  box-shadow: 1px 1px 0px 1px white;
+  -webkit-box-shadow: 1px 1px 0px 1px hsl(0, 0%, 100%);
+  box-shadow: 1px 1px 0px 1px hsl(0, 0%, 100%);
 }
 .button i,
 #wpforms-submit-644 i,
@@ -1160,11 +1147,11 @@ button {
 .button:hover,
 #wpforms-submit-644:hover,
 #wpforms-submit-1118:hover {
-  color: white;
-  background-color: black;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 0%);
   scale: 1.05;
-  -webkit-box-shadow: 1px 1px 0px 1px #cc0000;
-  box-shadow: 1px 1px 0px 1px #cc0000;
+  -webkit-box-shadow: 1px 1px 0px 1px hsl(0, 100%, 40%);
+  box-shadow: 1px 1px 0px 1px hsl(0, 100%, 40%);
 }
 .button:hover i,
 #wpforms-submit-644:hover i,
@@ -1175,16 +1162,16 @@ button {
 .button:visited,
 #wpforms-submit-644:visited,
 #wpforms-submit-1118:visited {
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 
 .branded {
-  background-color: #cc0000;
+  background-color: hsl(0, 100%, 40%);
   display: inline-block;
 }
 .branded:hover {
-  color: white;
-  background-color: black;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 0%);
   scale: 1.1;
   -webkit-box-shadow: 1px 1px 0px 1px #cc0000;
   box-shadow: 1px 1px 0px 1px #cc0000;
@@ -1207,7 +1194,7 @@ button {
 }
 
 .testimonial-btn-container {
-  background-color: #1f1f1f;
+  background-color: hsl(0, 0%, 12%);
   padding: 1rem;
   display: grid;
   place-content: center;
@@ -1216,12 +1203,12 @@ button {
 .testimonial-prevBtn,
 .testimonial-nextBtn {
   font-size: 1.375rem;
-  background-color: #1f1f1f;
+  background-color: hsl(0, 0%, 12%);
 }
 
 .testimonial-prevBtn:hover,
 .testimonial-nextBtn:hover {
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
 }
 
 .top-link {
@@ -1229,13 +1216,13 @@ button {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  background: #cc0000;
+  background: hsl(0, 100%, 40%);
   width: 2rem;
   height: 2rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  color: white;
+  color: hsl(0, 0%, 100%);
   opacity: 0.5;
   animation: bounce 2s ease-in-out infinite;
   visibility: hidden;
@@ -1243,7 +1230,7 @@ button {
 }
 .top-link:hover {
   scale: 1.5;
-  color: white;
+  color: hsl(0, 0%, 100%);
   opacity: 1;
 }
 @media (max-width: 400px) {
@@ -1366,7 +1353,7 @@ button {
   }
 }
 .home-hero-slider .slide__content h2 {
-  color: white;
+  color: hsl(0, 0%, 100%);
   font-size: 5.313rem;
   opacity: 0;
   background-image: url(/wp-content/uploads/header-decoration.svg);
@@ -1394,7 +1381,7 @@ button {
   }
 }
 .home-hero-slider .slide__content h3 {
-  color: white;
+  color: hsl(0, 0%, 100%);
   font-size: 3rem;
   opacity: 0;
   letter-spacing: 2px;
@@ -1425,10 +1412,10 @@ button {
   animation: pulsing 2s ease-out infinite;
 }
 .down-link a {
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 .down-link a:hover {
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
 }
 
 /*
@@ -1486,7 +1473,7 @@ button {
 }
 
 .hero__overlay__left {
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 .hero__overlay__left h2 {
   font-size: 3rem;
@@ -1527,6 +1514,27 @@ button {
   transform: translateX(0);
 }
 
+/*wordpress maintenance hero slider*/
+.screenshots__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.screenshots__grid h2 {
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  color: hsl(0, 0%, 100%);
+  font-family: "Nunito", sans-serif;
+}
+.screenshots__grid span {
+  background-color: hsl(0, 100%, 40%);
+  padding: 1rem;
+}
+.screenshots__grid h2, .screenshots__grid img {
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}
+
 /*
 ///////////////////////////ABOUT QUOTES SLIDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
@@ -1563,7 +1571,7 @@ button {
 }
 
 .testimonial-slider {
-  background-color: #1f1f1f;
+  background-color: hsl(0, 0%, 12%);
   position: relative;
   padding: 1rem 1rem 0 1rem;
 }
@@ -1578,7 +1586,7 @@ button {
   max-width: 1100px;
   grid-auto-flow: column;
   overflow: hidden;
-  color: white;
+  color: hsl(0, 0%, 100%);
   gap: 4rem;
 }
 
@@ -1647,8 +1655,8 @@ button {
 }
 
 .isotope-container__overlay {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  color: hsl(0, 0%, 100%);
+  background-color: hsla(0, 0%, 0%, 0.5);
   opacity: 0;
   transition: opacity 0.5s;
   display: grid;
@@ -1673,12 +1681,12 @@ button {
   }
 }
 .button-group button {
-  background-color: white;
-  color: black;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
   text-transform: lowercase;
 }
 .button-group button:hover {
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
 }
 .button-group button:first-of-type {
   padding-left: 0;
@@ -1789,7 +1797,7 @@ button {
 }
 .photo-credit-container span {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: hsla(0, 0%, 100%, 0.5);
   padding: 0.5rem;
   display: table;
   margin: 0 auto;
@@ -1799,14 +1807,14 @@ button {
 }
 
 .photo-credit {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: hsla(0, 0%, 100%, 0.5);
   border-radius: 22px 22px 0px 0px;
   -moz-border-radius: 22px 22px 0px 0px;
   -webkit-border-radius: 22px 22px 0px 0px;
   padding: 0.5rem;
 }
 .photo-credit a:hover {
-  color: black;
+  color: hsl(0, 0%, 0%);
 }
 
 .small-hero {
@@ -1850,18 +1858,13 @@ button {
   }
 }
 .small-hero__content__grid h3 {
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
   font-size: 3.75rem;
-}
-@media (max-width: 500px) {
-  .small-hero__content__grid h3 {
-    font-size: 2rem;
-  }
 }
 
 .small-hero__content__grid__item-right {
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: hsla(0, 0%, 100%, 0.5);
 }
 
 /*
@@ -1872,7 +1875,7 @@ button {
 }
 
 .quote-slides__overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: hsla(0, 0%, 0%, 0.5);
   padding: 4rem 1rem;
   margin: 0 auto;
 }
@@ -1884,7 +1887,7 @@ button {
 }
 .quote-slides__overlay blockquote {
   font-size: 2rem;
-  color: white;
+  color: hsl(0, 0%, 100%);
   font-family: "Anton", sans-serif;
 }
 @media (max-width: 850px) {
@@ -1894,7 +1897,7 @@ button {
 }
 .quote-slides__overlay cite,
 .quote-slides__overlay p {
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 
 .split-child {
@@ -1917,17 +1920,17 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   border-radius: 18px;
   background: #ffffff;
-  box-shadow: 2px 2px 5px 0px #e6e6e6;
-  color: black;
+  box-shadow: 2px 2px 5px 0px rgb(230, 230, 230);
+  color: hsl(0, 0%, 0%);
   padding: 2rem;
   height: 300px;
   transition: all 0.3s linear;
 }
 .services-item:hover {
-  box-shadow: 9px 9px 8px #0c96c02b, -9px -9px 8px #fff;
+  box-shadow: 9px 9px 8px rgba(12, 150, 192, 0.168627451), -9px -9px 8px #fff;
 }
 .services-item p,
 .services-item a,
@@ -1939,17 +1942,17 @@ button {
   font-size: 5.313rem;
 }
 .services-item a {
-  color: black;
+  color: hsl(0, 0%, 0%);
 }
 .services-item a:hover {
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
 }
 .services-item button {
-  background-color: white;
-  color: black;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
 }
 .services-item button:hover {
-  color: #cc0000;
+  color: hsl(0, 100%, 40%);
 }
 
 .modal-overlay {
@@ -1959,7 +1962,7 @@ button {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: hsla(0, 0%, 0%, 0.9);
   display: grid;
   place-items: center;
   visibility: hidden;
@@ -1974,7 +1977,7 @@ button {
 }
 
 .modal-container {
-  background: white;
+  background: hsl(0, 0%, 100%);
   width: 90%;
   position: relative;
   padding: 1rem;
@@ -2000,9 +2003,9 @@ button {
   top: 1rem;
   right: 1rem;
   font-size: 1rem;
-  background: black;
+  background: hsl(0, 0%, 0%);
   border-color: transparent;
-  color: white;
+  color: hsl(0, 0%, 100%);
   cursor: pointer;
   transition: 300ms;
 }
@@ -2014,7 +2017,7 @@ button {
   font-size: 2rem;
   background: transparent;
   border-color: transparent;
-  color: black;
+  color: hsl(0, 0%, 0%);
   cursor: pointer;
 }
 
@@ -2024,8 +2027,8 @@ button {
 }
 
 .page-charities .modal-container {
-  background-color: #404b68;
-  color: white;
+  background-color: hsl(224, 24%, 33%);
+  color: hsl(0, 0%, 100%);
 }
 
 /*///////////////////fa-icons\\\\\\\\\\\\\\\\\\\\\*/
@@ -2037,8 +2040,8 @@ button {
 .fa-icon .tooltip {
   visibility: hidden;
   width: 120px;
-  background-color: black;
-  color: white;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -2059,7 +2062,7 @@ button {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: black transparent transparent transparent;
+  border-color: hsl(0, 0%, 0%) transparent transparent transparent;
 }
 
 .fa-icon:hover .tooltip {
@@ -2081,36 +2084,36 @@ button {
 #wpforms-644 input,
 #wpforms-644 textarea {
   background-color: transparent;
-  color: white;
+  color: hsl(0, 0%, 100%);
   -ms-box-sizing: content-box;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
   width: 350px;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid hsl(0, 0%, 100%);
 }
 @media (max-width: 500px) {
   #wpforms-644 input,
-#wpforms-644 textarea {
+  #wpforms-644 textarea {
     width: 280px;
   }
 }
 #wpforms-644 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 #wpforms-644 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 #wpforms-644 :-ms-input-placeholder {
   /* IE 10+ */
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 #wpforms-644 :-moz-placeholder {
   /* Firefox 18- */
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 
 #wpforms-1118 {
@@ -2122,41 +2125,41 @@ button {
   }
 }
 #wpforms-1118 label {
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 #wpforms-1118 input,
 #wpforms-1118 textarea {
   background-color: transparent;
-  color: white;
+  color: hsl(0, 0%, 100%);
   -ms-box-sizing: content-box;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
   width: 350px;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid hsl(0, 0%, 100%);
 }
 @media (max-width: 500px) {
   #wpforms-1118 input,
-#wpforms-1118 textarea {
+  #wpforms-1118 textarea {
     width: 280px;
   }
 }
 #wpforms-1118 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 #wpforms-1118 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 #wpforms-1118 :-ms-input-placeholder {
   /* IE 10+ */
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 #wpforms-1118 :-moz-placeholder {
   /* Firefox 18- */
-  color: white;
+  color: hsl(0, 0%, 100%);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -221,6 +221,26 @@
     visibility: visible;
     transform: translateX(0);
 }
+/*wordpress maintenance hero slider*/
+.screenshots__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    h2{
+        display: grid;
+        place-items: center;
+        z-index: 10;
+        color: $clr-white;
+        font-family: $font-base;
+    }
+    span{
+        background-color: $clr-brand-red;
+        padding: 1rem;
+    }
+    h2, img{
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+    }
+}
 
 /*
 ///////////////////////////ABOUT QUOTES SLIDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

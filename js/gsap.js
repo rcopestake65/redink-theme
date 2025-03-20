@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 //hide warnings in console if gsap elements don't appear on different pages
 gsap.config({ nullTargetWarn: false });
 
-//---------------------------logo
+//---------------------------logo---------------------------------
 
 gsap.fromTo(
   ".logo",
@@ -22,7 +22,7 @@ if (document.body.classList.contains("home")) {
   );
 }
 
-//-----------------------------hero zoom effect
+//-----------------------------hero zoom effect----------------------------------------------
 const desktop = gsap.matchMedia();
 const zoom = document.querySelector(".zoom");
 desktop.add("(min-width: 1000px)", () => {
@@ -38,7 +38,7 @@ desktop.add("(min-width: 1000px)", () => {
     }
   );
 });
-//----------------------------slider heading
+//----------------------------slider heading-----------------------------
 
 //play the animation on the first slide
 //the zoom effect is only on desktops - so we use a matchMedia util from GSAP
@@ -61,7 +61,7 @@ gsap.fromTo(
     delay: 0.5,
   }
 );
-//then ste up a mutations observer so the animation plays each time a class is added to a header
+//then set up a mutations observer so the animation plays each time a class is added to a header
 // Select all elements with the class you're interested in
 const heading = document.querySelectorAll(".slide__heading");
 // Loop through the elements and set up a MutationObserver for each one
@@ -121,7 +121,7 @@ heading.forEach((element) => {
   observer.observe(element, config);
 });
 
-//-------------------------branded headers (h2.brand etc)
+//-------------------------branded headers (h2.brand etc)-------------------------------------
 gsap.fromTo(
   ".brand",
   { x: -60, opacity: 0 },
@@ -212,7 +212,7 @@ gsap.fromTo(
     },
   }
 );
-//--------------------------isotope portfolio items
+//--------------------------isotope portfolio items-------------------------------------
 gsap.fromTo(
   ".isotope-container__item",
   { scale: 0, opacity: 0, rotation: 40 },
@@ -248,7 +248,7 @@ gsap.fromTo(
     },
   }
 );
-//home page intro section image slider
+//home page intro section image slider------------------------------------------------------------
 gsap.fromTo(
   ".home-grid__right",
   { x: 60, opacity: 0 },
@@ -282,7 +282,7 @@ gsap.fromTo(
   }
 );
 
-//home and article page latest articles
+//home and article page latest articles--------
 const articleGrid = document.querySelector(".recent-posts-grid");
 const articleItem = document.querySelectorAll(".recent-posts-grid-item");
 const articleItemImg = document.querySelectorAll(".recent-posts-grid__image");
@@ -329,12 +329,14 @@ gsap.fromTo(
   }
 );
 
-//About page hero CTA
+//About & Wordpress page hero ------------------------------------------------------------
+if(aboutPage || wordpressPage) {
 const overlay = document.querySelector(".hero__overlay");
 const ctaHeader = document.querySelector(".hero__overlay__left h2");
 const ctaStrapline = document.querySelector(".hero__overlay__left p");
 const ctaBtn = document.querySelector(".gsap-btn-container");
 const ctaScreenshots = document.querySelectorAll(".hero__overlay__right img");
+const slideshowCaption = document.querySelectorAll(".hero__overlay__right h2");
 gsap
   .timeline()
   .fromTo(
@@ -346,6 +348,11 @@ gsap
     ctaHeader,
     { opacity: 0, x: -60 },
     { x: 0, opacity: 1, duration: 0.25, ease: "power2.out" }
+  )
+  .fromTo(
+    slideshowCaption,
+    { opacity: 0, y: 260 },
+    { y: 0, opacity: 1, duration: 0.25, ease: "power2.out" }
   )
   .fromTo(
     ctaStrapline,
@@ -368,6 +375,7 @@ gsap
     { opacity: 0, x: 60 },
     { x: 0, opacity: 1, duration: 0.25, ease: "power2.out" }
   );
+}
 //animate on hover the screenshots
 const tween = gsap.to(ctaScreenshots, { scale: 1.05, paused: true });
 ctaScreenshots.forEach((item) => {
@@ -489,7 +497,8 @@ gsap
       ease: "back",
     }
   );
-//---------------service modals (about page)
+  
+//---------------service modals (about page)------------------------------------------------
 if (aboutPage) {
   const servicesItem = document.querySelectorAll(".services-item");
   const servicesBtn = document.querySelectorAll("[data-filter]");
@@ -520,7 +529,7 @@ if (aboutPage) {
       }
     );
 
-  //animate icon on hover of the read more btn
+  //animate icon on hover of the read more btn-------------------------------------  
   servicesBtn.forEach((btn) => {
     btn.addEventListener("mouseenter", () => {
       servicesIcon.forEach((icon) => {
@@ -542,7 +551,7 @@ if (aboutPage) {
   });
 }
 
-//--------------hero photo credit button
+//--------------hero photo credit button------------------------------------------------
 if (aboutPage || servicesPage || portfolioPage || contactPage) {
   const creditBtn = document.querySelector(".photo-credit-container");
   const arrow = document.querySelector(".photo-credit-container .fa-circle-up");
@@ -566,7 +575,7 @@ if (aboutPage || servicesPage || portfolioPage || contactPage) {
     });
   }
 
-  //--------------services page hero icon
+  //--------------services page hero icon------------------------------------------------
   const faIcon = document.querySelectorAll(".fa-icon");
   //loading effect
   gsap.fromTo(
@@ -589,7 +598,7 @@ if (aboutPage || servicesPage || portfolioPage || contactPage) {
     });
   });
 }
-//-------------services page main
+//-------------services page main grid------------------------------------------------
 const serviceBlock = gsap.utils.toArray(".services-main-grid__item");
 const serviceBlockHeader = document.querySelectorAll(
   ".services-main-grid__item__header"
@@ -748,7 +757,7 @@ priceGridItem.forEach((item) => {
     }
   );
 });
-//testimonial container
+//testimonial container------------------------------------------------
 
 //testimonial slides
 const testimonialContainer = document.querySelector(".testimonial-container");
@@ -800,7 +809,7 @@ gsap
       //stagger: 0.25,
     }
   );
-//--------------contact page
+//--------------contact page------------------------------------------------
 //address grid items
 if (contactPage) {
   const contactGrid = document.querySelector(".contact-grid");
@@ -829,7 +838,7 @@ gsap.fromTo(
   { opacity: 0, scale: 0.5 },
   { opacity: 1, scale: 1, duration: 0.5 }
 );
-//-------------------landing page
+//-------------------landing page------------------------------------------------
 const landingItem = gsap.utils.toArray(".whatwecando-grid__item");
 landingItem.forEach((item) => {
   gsap.fromTo(

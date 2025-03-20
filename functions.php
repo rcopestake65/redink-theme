@@ -17,26 +17,23 @@ add_image_size( 'large', 1024, 1024, true );
 //load js
 function loadjs()
 {
-
-
-    wp_register_script('app', get_template_directory_uri() . '/js/app.js', '', 1, true);
-    wp_enqueue_script('app');
-
-    wp_register_script( 'jQuery', 'https://code.jquery.com/jquery-3.6.3.min.js', null, null, false );
-    wp_enqueue_script('jQuery');
-
-    wp_register_script( 'gsap-scrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js', null, null, true );
-    wp_enqueue_script('gsap-scrollTrigger');
-    
+    // Remove app.js from WordPress enqueue since we're adding it directly in header.php
     wp_register_script( 'gsap-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js', null, null, true );
     wp_enqueue_script('gsap-cdn');
 
-    wp_register_script( 'gsapflip-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js"', null, null, true );
-    wp_enqueue_script('gsapflip-cdn');
+    wp_register_script( 'gsap-scrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js', array('gsap-cdn'), null, true );
+    wp_enqueue_script('gsap-scrollTrigger');
+    
+    wp_register_script( 'jQuery', 'https://code.jquery.com/jquery-3.6.3.min.js', null, null, false );
+    wp_enqueue_script('jQuery');
 
-   wp_register_script('gsap', get_stylesheet_directory_uri() . '/js/gsap.js', '', 1, true);
-    wp_enqueue_script('gsap');
+    // wp_register_script('gsap', get_stylesheet_directory_uri() . '/js/gsap.js', '', 1, true);
+    // wp_enqueue_script('gsap');
 
+    // Remove the app.js registration and enqueue since we're adding it directly in header.php
+    // wp_register_script('app', get_template_directory_uri() . '/js/app.js', '', 1, true);
+    // wp_script_add_data('app', 'type', 'module');
+    // wp_enqueue_script('app');
 }
 add_action('wp_enqueue_scripts', 'loadjs');
 

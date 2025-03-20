@@ -60,8 +60,9 @@ array(
 
 
 
-<?php wp_footer();?>
-
+<?php wp_footer(); ?>
+<script type="module" src="<?php echo get_template_directory_uri(); ?>/js/gsap.js"></script>
+<script type="module" src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
 </body>
 
 </html>
